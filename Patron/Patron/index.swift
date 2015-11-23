@@ -11,6 +11,7 @@ import Ola
 
 public enum PatronError: ErrorType {
   case NoData
+  case OlaInitialzationFailed
 }
 
 public class PatronOperation: NSOperation {
@@ -28,10 +29,11 @@ public class PatronOperation: NSOperation {
     request: NSURLRequest,
     queue: dispatch_queue_t,
     timeout: dispatch_time_t = DISPATCH_TIME_FOREVER) {
-      self.session = session
-      self.req = request
-      self.queue = queue
-      self.timeout = timeout
+      
+    self.session = session
+    self.req = request
+    self.queue = queue
+    self.timeout = timeout
   }
   
   var sema: dispatch_semaphore_t?
@@ -64,11 +66,11 @@ public class PatronOperation: NSOperation {
       if let er = error {
         if er.code == NSURLErrorNotConnectedToInternet ||
           er.code == NSURLErrorNetworkConnectionLost {
-            self?.check()
+          self?.check()
         } else {
           self?.error = er
           
-          // TODO: Retry after three, six, and nine seconds
+          // TODO: Retry after three, six, and twelve seconds
           
           self?.unlock()
         }
@@ -114,7 +116,8 @@ public class PatronOperation: NSOperation {
         }
       }
     } else {
-      print("could not initialize ola")
+      self.error = PatronError.OlaInitialzationFailed
+      unlock()
     }
   }
   
