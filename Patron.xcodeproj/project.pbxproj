@@ -11,7 +11,7 @@
 		4CCC8C4E1C03793400120D07 /* Patron.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCC8C431C03793300120D07 /* Patron.framework */; };
 		4CCC8C531C03793400120D07 /* PatronTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC8C521C03793400120D07 /* PatronTests.swift */; };
 		4CCC8C5E1C03796C00120D07 /* index.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC8C5D1C03796C00120D07 /* index.swift */; };
-		4CCC8C601C037A2000120D07 /* Ola.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCC8C5F1C037A2000120D07 /* Ola.framework */; };
+		4CCC8C941C04B7EA00120D07 /* Ola.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCC8C931C04B7EA00120D07 /* Ola.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +32,7 @@
 		4CCC8C521C03793400120D07 /* PatronTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatronTests.swift; sourceTree = "<group>"; };
 		4CCC8C541C03793400120D07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CCC8C5D1C03796C00120D07 /* index.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = index.swift; sourceTree = "<group>"; };
-		4CCC8C5F1C037A2000120D07 /* Ola.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Ola.framework; path = "../../ola/build/Debug-iphoneos/Ola.framework"; sourceTree = "<group>"; };
+		4CCC8C931C04B7EA00120D07 /* Ola.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Ola.framework; path = "../ola/build/Debug-iphoneos/Ola.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CCC8C601C037A2000120D07 /* Ola.framework in Frameworks */,
+				4CCC8C941C04B7EA00120D07 /* Ola.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,7 +58,7 @@
 		4CCC8C391C03793300120D07 = {
 			isa = PBXGroup;
 			children = (
-				4CCC8C5F1C037A2000120D07 /* Ola.framework */,
+				4CCC8C931C04B7EA00120D07 /* Ola.framework */,
 				4CCC8C451C03793300120D07 /* Patron */,
 				4CCC8C511C03793400120D07 /* PatronTests */,
 				4CCC8C441C03793300120D07 /* Products */,
@@ -387,6 +387,7 @@
 				4CCC8C591C03793400120D07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4CCC8C5A1C03793400120D07 /* Build configuration list for PBXNativeTarget "PatronTests" */ = {
 			isa = XCConfigurationList;
@@ -395,6 +396,7 @@
 				4CCC8C5C1C03793400120D07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
