@@ -11,9 +11,9 @@
 *.perspectivev3
 *.playground
 *.xccheckout
-*.xcscheme
-*.xcscmblueprint
 *.xcuserstate
+.pid
 DerivedData
 build/
+module/module.modulemap
 xcuserdata

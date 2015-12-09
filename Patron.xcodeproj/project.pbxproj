@@ -11,7 +11,6 @@
 		4CCC8C4E1C03793400120D07 /* Patron.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCC8C431C03793300120D07 /* Patron.framework */; };
 		4CCC8C531C03793400120D07 /* PatronTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC8C521C03793400120D07 /* PatronTests.swift */; };
 		4CCC8C5E1C03796C00120D07 /* index.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC8C5D1C03796C00120D07 /* index.swift */; };
-		4CCC8C941C04B7EA00120D07 /* Ola.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCC8C931C04B7EA00120D07 /* Ola.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +31,6 @@
 		4CCC8C521C03793400120D07 /* PatronTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatronTests.swift; sourceTree = "<group>"; };
 		4CCC8C541C03793400120D07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CCC8C5D1C03796C00120D07 /* index.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = index.swift; sourceTree = "<group>"; };
-		4CCC8C931C04B7EA00120D07 /* Ola.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Ola.framework; path = "../ola/build/Debug-iphoneos/Ola.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +38,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CCC8C941C04B7EA00120D07 /* Ola.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,7 +55,6 @@
 		4CCC8C391C03793300120D07 = {
 			isa = PBXGroup;
 			children = (
-				4CCC8C931C04B7EA00120D07 /* Ola.framework */,
 				4CCC8C451C03793300120D07 /* Patron */,
 				4CCC8C511C03793400120D07 /* PatronTests */,
 				4CCC8C441C03793300120D07 /* Products */,
@@ -243,7 +239,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -291,7 +287,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -319,10 +315,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 2;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Patron/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.michaelnisi.Patron;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -337,10 +334,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 2;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Patron/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.michaelnisi.Patron;
 				PRODUCT_NAME = "$(TARGET_NAME)";

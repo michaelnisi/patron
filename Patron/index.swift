@@ -7,130 +7,110 @@
 //
 
 import Foundation
-import Ola
 
 public enum PatronError: ErrorType {
-  case NoData
-  case OlaInitialzationFailed
+  case InvalidURL
+  case NIY
 }
 
-public class PatronOperation: NSOperation {
+/// **Patron** is a simple client that consumes JSON HTTP APIs.
+public protocol Patron {
+  
+  /// Issues a `GET` request to the remote API.
+  ///
+  /// - Parameter path: The URL path.
+  /// - Parameter cb: The callback receiving the JSON result as its first parameter.
+  ///
+  /// - Returns: A new `NSURLSessionTask`.
+  ///
+  /// - Throws: `PatronError.InvalidURL` if the provided path does not yield a valid URL.
+  func get (path: String, cb: (AnyObject?, NSURLResponse?, ErrorType?) -> Void) throws -> NSURLSessionTask
+  
+  /// Issues a `POST` request to the remote API.
+  ///
+  /// - Parameter path: The URL path.
+  /// - Parameter json: The JSON payload to send as the body of this request.
+  /// - Parameter cb: The callback receiving the JSON result as its first parameter.
+  ///
+  /// - Returns: A new `NSURLSessionTask`.
+  ///
+  /// - Throws: `PatronError.InvalidURL` if the provided path does not yield a valid URL.
+  func post (path: String, json: AnyObject, cb: (AnyObject?, NSURLResponse?, ErrorType?) -> Void) throws -> NSURLSessionTask
+  
+}
+
+/// A **Patron** implementation.
+public class PatronClient: Patron {
+  
+  let baseURL: NSURL
   let queue: dispatch_queue_t
   let session: NSURLSession
-  let req: NSURLRequest
-  let timeout: dispatch_time_t
   
-  public var response: NSURLResponse?
-  public var error: ErrorType?
-  public var result: AnyObject?
-  
+  /// Creates a client for the service at the provided URL.
+  ///
+  /// - Parameter URL: The URL of the service.
+  /// - Parameter queue: A dispatch queue to serialize to and from JSON.
+  /// - Parameter session: The session to use for HTTP requests.
+  /// 
+  /// - Returns: The newly initialized PatronClient object.
   public init (
-    session: NSURLSession,
-    request: NSURLRequest,
+    URL baseURL: NSURL,
     queue: dispatch_queue_t,
-    timeout: dispatch_time_t = DISPATCH_TIME_FOREVER) {
+    session: NSURLSession) {
       
-    self.session = session
-    self.req = request
+    self.baseURL = baseURL
     self.queue = queue
-    self.timeout = timeout
+    self.session = session
   }
   
-  var sema: dispatch_semaphore_t?
+  typealias SessionCallback = (AnyObject?, NSURLResponse?, ErrorType?) -> Void
   
-  func lock () {
-    if !cancelled && sema == nil {
-      sema = dispatch_semaphore_create(0)
-      dispatch_semaphore_wait(sema!, timeout)
-    }
-  }
-  
-  func unlock () {
-    if let sema = self.sema {
-      dispatch_semaphore_signal(sema)
-    }
-  }
-  
-  weak var task: NSURLSessionTask?
-  
-  func request () {
-    self.task?.cancel()
-    self.task = nil
-    
-    let task = session.dataTaskWithRequest(req) { [weak self] data, response, error in
-      if self?.cancelled == true {
-        return
+  func dataTaskWithRequest (req: NSURLRequest, cb: SessionCallback) throws -> NSURLSessionTask {
+    let queue = self.queue
+    let task = session.dataTaskWithRequest(req) { data, res, error in
+      guard error == nil else {
+        return cb(nil, res, error!)
       }
-      self?.response = response
-      
-      if let er = error {
-        if er.code == NSURLErrorNotConnectedToInternet ||
-          er.code == NSURLErrorNetworkConnectionLost {
-          self?.check()
-        } else {
-          self?.error = er
-          
-          // TODO: Retry after three, six, and twelve seconds
-          
-          self?.unlock()
+      dispatch_async(queue) {
+        do {
+          let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+          cb(json, res, nil)
+        } catch let er {
+          cb(nil, res, er)
         }
-        return
-      }
-      do {
-        guard let d = data else { throw PatronError.NoData }
-        let result = try NSJSONSerialization.JSONObjectWithData(d, options: .AllowFragments)
-        self?.result = result
-      } catch let er {
-        self?.error = er
-      }
-      defer {
-        self?.unlock()
       }
     }
     task.resume()
-    
-    self.task = task
+    return task
   }
-  
-  var allowsCellularAccess: Bool { get {
-    return session.configuration.allowsCellularAccess }
-  }
-  
-  func reachable (status: OlaStatus) -> Bool {
-    return status == .Reachable || (status == .Cellular && allowsCellularAccess)
-  }
-  
-  lazy var ola: Ola? = { [unowned self] in
-    Ola(host: self.req.URL!.host!, queue: self.queue)
-  }()
-  
-  func check () {
-    if let ola = self.ola {
-      if reachable(ola.reach()) {
-        request()
-      } else {
-        ola.reachWithCallback() { [weak self] status in
-          if self?.cancelled == false && self?.reachable(status) == true {
-            self?.request()
-          }
-        }
-      }
-    } else {
-      self.error = PatronError.OlaInitialzationFailed
-      unlock()
+
+  public func get (path: String, cb: (AnyObject?, NSURLResponse?, ErrorType?) -> Void) throws -> NSURLSessionTask {
+    guard let url = NSURL(string: path, relativeToURL: baseURL) else {
+      throw PatronError.InvalidURL
     }
+    let req = NSURLRequest(URL: url)
+    return try dataTaskWithRequest(req, cb: cb)
   }
   
-  public override func main () {
-    if cancelled { return }
-    request()
-    lock()
-  }
-  
-  public override func cancel () {
-    task?.cancel()
-    unlock()
-    super.cancel()
+  public func post (path: String, json: AnyObject, cb: (AnyObject?, NSURLResponse?, ErrorType?) -> Void) throws -> NSURLSessionTask {
+    guard let url = NSURL(string: path, relativeToURL: baseURL) else {
+      throw PatronError.InvalidURL
+    }
+    var er: ErrorType?
+    var HTTPBody: NSData?
+    dispatch_sync(queue) {
+      do {
+        HTTPBody = try NSJSONSerialization.dataWithJSONObject(json, options: .PrettyPrinted)
+      } catch let error {
+        er = error
+      }
+    }
+    guard er == nil else {
+      throw er!
+    }
+    let req = NSMutableURLRequest(URL: url)
+    req.HTTPBody = HTTPBody
+    req.HTTPMethod = "POST"
+    return try dataTaskWithRequest(req, cb: cb)
   }
 }
-
