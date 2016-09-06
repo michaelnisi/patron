@@ -10,15 +10,10 @@ clean:
 build:
 	xcodebuild -configuration Debug build
 
-start_server:
-	./start_server.sh
-
-test: start_server
-	xctool test \
+test:
+	xcodebuild test \
 		-project $(project) \
 		-scheme $(scheme) \
-		-sdk $(sdk) \
-		-reporter pretty
-	./stop_server.sh
+		-sdk $(sdk)
 
-.PHONY: all clean test start_server
+.PHONY: all clean test

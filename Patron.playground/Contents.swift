@@ -1,14 +1,8 @@
-# patron - consume JSON via HTTP
+//: Playground - noun: a place where people can play
 
-The **Patron** iOS framework provides a client to consume JSON HTTP APIs.
-
-[![Build Status](https://travis-ci.org/michaelnisi/patron.svg)](http://travis-ci.org/michaelnisi/patron)
-
-## Example
-
-```swift
 import Foundation
 import Patron
+import XCPlayground
 
 let url = NSURL(string: "https://api.github.com")!
 let session = NSURLSession.sharedSession()
@@ -21,9 +15,7 @@ patron.get("/search/repositories?q=language:swift") { json, response, error in
   let repos = json!["items"] as! [[String : AnyObject]]
   let names = repos.map { $0["name"]! }
   print(names)
+  XCPlaygroundPage.currentPage.finishExecution()
 }
-```
 
-## License
-
-[MIT License](https://raw.githubusercontent.com/michaelnisi/patron/master/LICENSE)
+XCPlaygroundPage.currentPage.needsIndefiniteExecution = true

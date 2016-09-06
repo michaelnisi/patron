@@ -2,4 +2,4 @@
 
 set -o xtrace
 
-kill $(cat .pid)
+kill `cat .pid`
