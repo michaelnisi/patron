@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0710"
+   LastUpgradeVersion = "0800"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -33,7 +33,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "cd $SRCROOT/PatronTests &amp;&amp; PATH=/opt/pkg/bin:/usr/local/bin::$PATH ./start_server.sh">
+               scriptText = "if [ &quot;$PATRON_CLI&quot; = &quot;1&quot; ]; then&#10;    exit&#10;else&#10;    cd $SRCROOT/PatronTests &amp;&amp; PATH=/opt/pkg/bin:/usr/local/bin::$PATH ./start_server.sh&#10;fi">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
@@ -51,7 +51,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "cd $SRCROOT &amp;&amp; ./stop_server.sh">
+               scriptText = "if [ &quot;$PATRON_CLI&quot; = &quot;1&quot; ]; then&#10;    exit&#10;else&#10;    cd $SRCROOT/PatronTests &amp;&amp; ./stop_server.sh&#10;fi">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
@@ -118,6 +118,13 @@
             ReferencedContainer = "container:Patron.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "OS_ACTIVITY_MODE"
+            value = "disable"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

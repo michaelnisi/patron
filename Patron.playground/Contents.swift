@@ -2,20 +2,23 @@
 
 import Foundation
 import Patron
-import XCPlayground
+import PlaygroundSupport
 
-let url = NSURL(string: "https://api.github.com")!
-let session = NSURLSession.sharedSession()
-let target = dispatch_get_main_queue()
+let url = URL(string: "https://api.github.com")!
+let session = URLSession.shared
+let target = DispatchQueue.main
 
 let patron = Patron(URL: url, session: session, target: target)
+let path = "/search/repositories?q=language:swift"
 
-patron.get("/search/repositories?q=language:swift") { json, response, error in
+let task = patron.get(path) { json, response, error in
   assert(error == nil)
-  let repos = json!["items"] as! [[String : AnyObject]]
+  let dict = json as! [String : Any]
+  let repos = dict["items"] as! [[String : AnyObject]]
   let names = repos.map { $0["name"]! }
   print(names)
-  XCPlaygroundPage.currentPage.finishExecution()
+  
+  PlaygroundPage.current.finishExecution()
 }
 
-XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
+PlaygroundPage.current.needsIndefiniteExecution = true

@@ -1,7 +1,7 @@
-var restify = require('restify')
+const restify = require('restify')
 
 function slow (req, res, next) {
-  setTimeout(function () {
+  setTimeout(() => {
     res.send('sorry, I\'m late')
     next()
   }, 1000)
@@ -30,7 +30,22 @@ function echo (req, res, next) {
   req.on('end', onend)
 }
 
-var server = restify.createServer()
+function invalid (req, res, next) {
+  res.writeHead(200)
+  res.write('meh')
+  res.end()
+}
+
+function potus (req, res, next) {
+  res.send([
+    { name: 'Barack Obama', start: 2009, end: 2016 },
+    { name: 'George W. Bush', start: 2001, end: 2009 },
+    { name: 'Bill Clinton', start: 1993, end: 2001 }
+  ])
+  next()
+}
+
+const server = restify.createServer()
 
 server.get('/hello/:name', hello)
 server.head('/hello/:name', hello)
@@ -41,6 +56,12 @@ server.head('/echo', echo)
 server.head('/slow', slow)
 server.get('/slow', slow)
 
-server.listen(8080, function () {
+server.head('/invalid', invalid)
+server.get('/invalid', invalid)
+
+server.head('/potus', potus)
+server.get('/potus', potus)
+
+server.listen(8080, () => {
   console.log('%s listening at %s', server.name, server.url)
 })

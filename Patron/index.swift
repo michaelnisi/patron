@@ -10,27 +10,27 @@ import Foundation
 
 // MARK: API
 
-public enum PatronError: ErrorType {
-  case InvalidJSON
+public enum PatronError: Error {
+  case invalidJSON
 }
 
-/// Defines requirements for accessing a remote JSON service API.
+/// Defines an HTTP JSON service.
 public protocol JSONService {
   
   func get(
-    path: String,
-    cb: (AnyObject?, NSURLResponse?, ErrorType?) -> Void
-  ) -> NSURLSessionTask
+    _ path: String,
+    cb: @escaping (Any?, URLResponse?, Error?) -> Void
+  ) -> URLSessionTask
   
   func post(
-    path: String,
+    _ path: String,
     json: AnyObject,
-    cb: (AnyObject?, NSURLResponse?, ErrorType?) -> Void
-  ) throws -> NSURLSessionTask
+    cb: @escaping (Any?, URLResponse?, Error?) -> Void
+  ) throws -> URLSessionTask
   
   var host: String { get }
   
-  var status: (Int, NSTimeInterval)? { get }
+  var status: (Int, TimeInterval)? { get }
 }
 
 // MARK: -
@@ -38,7 +38,7 @@ public protocol JSONService {
 /// The `Patron` class is a convenient way to model a remote HTTP JSON
 /// service endpoint. A `Patron` object provides access to a single service
 /// on a specific host via `GET` and `POST` HTTP methods. It assumes that
-/// payloads in both directions are notated in JSON. 
+/// payloads in both directions are JSON.
 ///
 /// As `Patron` serializes JSON payloads on the calling thread, it is not the 
 /// best idea to use it from the main thread, instead, at least I tend to, run 
@@ -47,19 +47,19 @@ public protocol JSONService {
 /// an operation and execute *off* the main thread.
 public final class Patron: JSONService {
   
-  private let baseURL: NSURL
+  private let baseURL: URL
   
-  private let session: NSURLSession
+  private let session: URLSession
   
-  private let target: dispatch_queue_t
+  private let target: DispatchQueue
   
   /// The hostname of the remote service.
   public var host: String { get { return baseURL.host! } }
   
-  /// The last `NSURL` error code, and the timestamp at which it occured in
-  /// seconds since `00:00:00 UTC on 1 January 1970`. The next successful
-  /// request resets `status` to `nil`.
-  public var status: (Int, NSTimeInterval)?
+  /// The last `NSURL` or `JSONSerialization` error code, and the timestamp at 
+  /// which it occured in seconds since `00:00:00 UTC on 1 January 1970`. The
+  /// next successful request resets `status` to `nil`.
+  public var status: (Int, TimeInterval)?
   
   /// Creates a client for the service at the provided URL.
   ///
@@ -69,9 +69,9 @@ public final class Patron: JSONService {
   /// 
   /// - returns: The newly initialized `Patron` client.
   public init(
-    URL baseURL: NSURL,
-    session: NSURLSession,
-    target: dispatch_queue_t
+    URL baseURL: URL,
+    session: URLSession,
+    target: DispatchQueue
   ) {
     self.baseURL = baseURL
     self.session = session
@@ -83,34 +83,36 @@ public final class Patron: JSONService {
   }
   
   private func dataTaskWithRequest(
-    req: NSURLRequest,
-    cb: (AnyObject?, NSURLResponse?, ErrorType?) -> Void
-  ) -> NSURLSessionTask {
-    
-    let task = session.dataTaskWithRequest(req) { data, res, error in
-      var json: AnyObject? = nil
-      var parseError: ErrorType? = nil
+    _ req: URLRequest,
+    cb: @escaping (Any?, URLResponse?, Error?) -> Void
+  ) -> URLSessionTask {
+    let task = session.dataTask(with: req, completionHandler: { data, res, error in
       
-      defer {
-        dispatch_async(self.target) {
-          cb(json, res, error ?? parseError)
+      func dispatch(_ json: Any?, _ error: Error?) {
+        if let er = error {
+          self.status = (er._code, Date().timeIntervalSince1970)
+        }
+        self.target.async {
+          cb(json, res, error)
         }
       }
-      
+
       guard error == nil else {
-        return self.status = (error!.code, NSDate().timeIntervalSince1970)
+        return dispatch(nil, error)
       }
       
       self.status = nil
       
       do {
-        return json = try NSJSONSerialization.JSONObjectWithData(
-          data!, options: .AllowFragments
+        // TODO: Consider disallowing fragments
+        let json = try JSONSerialization.jsonObject(
+          with: data!, options: .allowFragments
         )
+        dispatch(json, nil)
       } catch let er {
-        return parseError = er
+        dispatch(nil, er)
       }
-    }
+    }) 
     
     task.resume()
     
@@ -126,12 +128,12 @@ public final class Patron: JSONService {
   ///
   /// - returns: An executing `NSURLSessionTask`.
   public func get(
-    path: String,
-    cb: (AnyObject?, NSURLResponse?, ErrorType?) -> Void
-  ) -> NSURLSessionTask {
+    _ path: String,
+    cb: @escaping (Any?, URLResponse?, Error?) -> Void
+  ) -> URLSessionTask {
     
-    let url = NSURL(string: path, relativeToURL: baseURL)!
-    let req = NSURLRequest(URL: url)
+    let url = URL(string: path, relativeTo: baseURL)!
+    let req = URLRequest(url: url)
     
     return dataTaskWithRequest(req, cb: cb)
   }
@@ -149,24 +151,24 @@ public final class Patron: JSONService {
   /// - throws: `PatronError.InvalidJSON`, if the potential `json` payload is 
   /// not serializable to JSON by `NSJSONSerialization`.
   public func post(
-    path: String,
+    _ path: String,
     json: AnyObject,
-    cb: (AnyObject?, NSURLResponse?, ErrorType?) -> Void
-  ) throws -> NSURLSessionTask {
+    cb: @escaping (Any?, URLResponse?, Error?) -> Void
+  ) throws -> URLSessionTask {
     
-    guard NSJSONSerialization.isValidJSONObject(json) else {
-      throw PatronError.InvalidJSON
+    guard JSONSerialization.isValidJSONObject(json) else {
+      throw PatronError.invalidJSON
     }
     
-    let data = try NSJSONSerialization.dataWithJSONObject(
-      json, options: .PrettyPrinted
+    let data = try JSONSerialization.data(
+      withJSONObject: json, options: .prettyPrinted
     )
     
-    let url = NSURL(string: path, relativeToURL: baseURL)!
-    let req = NSMutableURLRequest(URL: url)
-    req.HTTPBody = data
-    req.HTTPMethod = "POST"
+    let url = URL(string: path, relativeTo: baseURL)!
+    let req = NSMutableURLRequest(url: url)
+    req.httpBody = data
+    req.httpMethod = "POST"
     
-    return dataTaskWithRequest(req, cb: cb)
+    return dataTaskWithRequest(req as URLRequest, cb: cb)
   }
 }
