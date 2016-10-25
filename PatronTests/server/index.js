@@ -2,13 +2,15 @@ const restify = require('restify')
 
 function slow (req, res, next) {
   setTimeout(() => {
-    res.send('sorry, I\'m late')
+    let body = { message: 'sorry, I\'m late' }
+    res.send(body)
     next()
   }, 1000)
 }
 
 function hello (req, res, next) {
-  res.send('hello ' + req.params.name)
+  let body = { message: 'hello, ' + req.params.name }
+  res.send(body)
   next()
 }
 

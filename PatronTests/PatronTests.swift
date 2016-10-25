@@ -11,7 +11,7 @@ import XCTest
 
 final class PatronTests: XCTestCase {
   
-  fileprivate var svc: Patron!
+  fileprivate var svc: JSONService!
   
   fileprivate func freshSession() -> URLSession {
     let conf = URLSessionConfiguration.default
@@ -42,7 +42,7 @@ final class PatronTests: XCTestCase {
   func testDeinit() {
     let exp = expectation(description: "Deinit")
     
-    let _ = svc.get("/slow") { json, res, er in
+    svc.get(path: "/slow") { json, res, er in
       XCTAssertNil(er)
       XCTAssertNotNil(res)
       XCTAssertNotNil(json)
@@ -60,7 +60,7 @@ final class PatronTests: XCTestCase {
     let exp = expectation(description: "Cancelled")
     let svc = self.svc
     
-    let req = svc?.get("/hello/michael") { json, res, er in
+    let req = svc?.get(path: "/hello/michael") { json, res, er in
       XCTAssertNil(json)
       XCTAssertNil(res)
       XCTAssertNotNil(er)
@@ -83,7 +83,7 @@ final class PatronTests: XCTestCase {
     let exp = expectation(description: "WrongPort")
     let svc = self.svc
     
-    let _ = svc?.get("/hello/michael") { json, res, er in
+    svc?.get(path: "/hello/michael") { json, res, er in
       XCTAssertNil(json)
       XCTAssertNil(res)
       XCTAssertNotNil(er)
@@ -108,7 +108,7 @@ final class PatronTests: XCTestCase {
     let exp = expectation(description: "NotFound")
     let svc = self.svc
     
-    let _ = svc?.get("/nowhere") { json, res, er in
+    svc?.get(path: "/nowhere") { json, res, er in
       let dict = json as! [String : String]
       let code = dict["code"]! as String
       XCTAssertEqual(code, "ResourceNotFound")
@@ -127,7 +127,7 @@ final class PatronTests: XCTestCase {
   func testGetInvalidJSON() {
     let exp = expectation(description: "GetInvalidJSON")
     
-    let _ = svc.get("/invalid") { json, res, error in
+    svc.get(path: "/invalid") { json, res, error in
       XCTAssertNil(json)
       XCTAssertNotNil(res)
       XCTAssertEqual(error!._code, 3840)
@@ -143,7 +143,7 @@ final class PatronTests: XCTestCase {
     let exp = expectation(description: "PostInvalidJSON")
     
     do {
-      let _ = try svc.post("/echo", json: self) { _, _, _ in
+      try svc.post(path: "/echo", json: self) { _, _, _ in
         XCTFail("should not be called")
       }
     } catch PatronError.invalidJSON {
@@ -160,17 +160,17 @@ final class PatronTests: XCTestCase {
   func testPost() {
     let exp = expectation(description: "Post")
     
-    let payload = ["name": "michael"]
+    let payload  = ["name": "michael"]
     let svc = self.svc
     
-    let _ = try! svc?.post("/echo", json: payload as AnyObject) { json, response, error in
+    try! svc?.post(path: "/echo", json: payload as AnyObject) { json, response, error in
       XCTAssertNil(error, "should not error: \(error)")
       XCTAssertNotNil(response)
       XCTAssertNotNil(json)
       
       let wanted = payload
       
-      if let found = json as? [String:String] {
+      if let found = json as? [String : String] {
         XCTAssertEqual(found, wanted)
       } else {
         XCTFail("unexpected \(json) \(response)")
@@ -187,17 +187,14 @@ final class PatronTests: XCTestCase {
   func testGet() {
     let exp = expectation(description: "Get")
 
-    let _ = svc.get("/hello/michael") { json, response, error in
+    svc.get(path: "/hello/michael") { json, response, error in
       XCTAssertNil(error, "should not error: \(error)")
       XCTAssertNotNil(response)
       XCTAssertNotNil(json)
-      
-      let wanted = "hello michael"
-      if let found = json as? String {
-        XCTAssertEqual(found, wanted)
-      } else {
-        XCTFail("unexpected \(json) \(response)")
-      }
+
+      let wanted = ["message": "hello, michael"]
+      let found = json as! [String : String]
+      XCTAssertEqual(found, wanted)
       
       exp.fulfill()
     }
@@ -210,7 +207,7 @@ final class PatronTests: XCTestCase {
   func testGetArrayOfDictionaries() {
     let exp = expectation(description: "GetArrayOfDictionaries")
     
-    let _ = svc.get("/potus") { json, response, error in
+    svc.get(path: "/potus") { json, response, error in
       XCTAssertNil(error, "should not error: \(error)")
       XCTAssertNotNil(response)
       XCTAssertNotNil(json)

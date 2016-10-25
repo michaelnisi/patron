@@ -17,15 +17,15 @@ public enum PatronError: Error {
 /// Defines an HTTP JSON service.
 public protocol JSONService {
   
-  func get(
-    _ path: String,
-    cb: @escaping (Any?, URLResponse?, Error?) -> Void
+  @discardableResult func get(
+    path: String,
+    cb: @escaping (AnyObject?, URLResponse?, Error?) -> Void
   ) -> URLSessionTask
   
-  func post(
-    _ path: String,
+  @discardableResult func post(
+    path: String,
     json: AnyObject,
-    cb: @escaping (Any?, URLResponse?, Error?) -> Void
+    cb: @escaping (AnyObject?, URLResponse?, Error?) -> Void
   ) throws -> URLSessionTask
   
   var host: String { get }
@@ -35,14 +35,14 @@ public protocol JSONService {
 
 // MARK: -
 
-/// The `Patron` class is a convenient way to model a remote HTTP JSON
+/// The `Patron` class is a convenient way to represent a remote HTTP JSON
 /// service endpoint. A `Patron` object provides access to a single service
 /// on a specific host via `GET` and `POST` HTTP methods. It assumes that
 /// payloads in both directions are JSON.
 ///
 /// As `Patron` serializes JSON payloads on the calling thread, it is not the 
 /// best idea to use it from the main thread, instead, at least I tend to, run 
-/// it from within `NSOperation`, because usually there is more work to do with 
+/// it from within an `Operation`, because usually there is more work to do with
 /// the results of your requests anyways; so why not wrap everything neatly into 
 /// an operation and execute *off* the main thread.
 public final class Patron: JSONService {
@@ -84,7 +84,7 @@ public final class Patron: JSONService {
   
   private func dataTaskWithRequest(
     _ req: URLRequest,
-    cb: @escaping (Any?, URLResponse?, Error?) -> Void
+    cb: @escaping (AnyObject?, URLResponse?, Error?) -> Void
   ) -> URLSessionTask {
     let task = session.dataTask(with: req, completionHandler: { data, res, error in
       
@@ -93,7 +93,7 @@ public final class Patron: JSONService {
           self.status = (er._code, Date().timeIntervalSince1970)
         }
         self.target.async {
-          cb(json, res, error)
+          cb(json as AnyObject?, res, error)
         }
       }
 
@@ -104,9 +104,8 @@ public final class Patron: JSONService {
       self.status = nil
       
       do {
-        // TODO: Consider disallowing fragments
         let json = try JSONSerialization.jsonObject(
-          with: data!, options: .allowFragments
+          with: data!, options: []
         )
         dispatch(json, nil)
       } catch let er {
@@ -126,10 +125,10 @@ public final class Patron: JSONService {
   /// parameter, followed by response, and error. All callback parameters may be
   /// `nil`.
   ///
-  /// - returns: An executing `NSURLSessionTask`.
+  /// - returns: An executing `URLSessionTask`.
   public func get(
-    _ path: String,
-    cb: @escaping (Any?, URLResponse?, Error?) -> Void
+    path: String,
+    cb: @escaping (AnyObject?, URLResponse?, Error?) -> Void
   ) -> URLSessionTask {
     
     let url = URL(string: path, relativeTo: baseURL)!
@@ -146,14 +145,14 @@ public final class Patron: JSONService {
   /// parameter, followed by response, and error. All callback parameters may be
   /// `nil`.
   ///
-  /// - returns: An executing `NSURLSessionTask`.
+  /// - returns: An executing `URLSessionTask`.
   ///
   /// - throws: `PatronError.InvalidJSON`, if the potential `json` payload is 
   /// not serializable to JSON by `NSJSONSerialization`.
   public func post(
-    _ path: String,
+    path: String,
     json: AnyObject,
-    cb: @escaping (Any?, URLResponse?, Error?) -> Void
+    cb: @escaping (AnyObject?, URLResponse?, Error?) -> Void
   ) throws -> URLSessionTask {
     
     guard JSONSerialization.isValidJSONObject(json) else {

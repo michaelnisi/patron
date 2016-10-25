@@ -9,12 +9,10 @@ let session = URLSession.shared
 let target = DispatchQueue.main
 
 let patron = Patron(URL: url, session: session, target: target)
-let path = "/search/repositories?q=language:swift"
 
-let task = patron.get(path) { json, response, error in
+patron.get(path: "/search/repositories?q=language:swift") { json, response, error in
   assert(error == nil)
-  let dict = json as! [String : Any]
-  let repos = dict["items"] as! [[String : AnyObject]]
+  let repos = json!["items"] as! [[String : AnyObject]]
   let names = repos.map { $0["name"]! }
   print(names)
   
