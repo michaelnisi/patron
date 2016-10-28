@@ -1,3 +1,13 @@
+### 4.0.1 (2016-10-28)
+
+Updating dependent libs, I learned that I needed these two practical tweaks.
+
+- [ae220f9](https://github.com/michaelnisi/patron/commit/ae220f9a2ad44a0a74d27d08f340044c203ca29c) To submit reachability events on the same queue, from a different source, I needed an easy way to access the target queue.
+([@michaelnisi](https://github.com/michaelnisi))
+
+- [06fc9a1](https://github.com/michaelnisi/patron/commit/06fc9a1449bea10b0777d186d1d50c7ed100f934) Complying with Apple’s recommendation, supporting the latest two iOS versions, this sets the iOS deployment target to 9.0.
+([@michaelnisi](https://github.com/michaelnisi))
+
 ### 4.0.0 (2016-10-22)
 
 Realizing that callbacks should pass `AnyObject?` instead of `Any?`, I’ve decided to roll back the previous change. However, this comes with the drawback of not allowing fragments in JSON HTTP bodies, but this is acceptable, a decent JSON API should not return unboxed primitives.
