@@ -31,6 +31,8 @@ public protocol JSONService {
   var host: String { get }
   
   var status: (Int, TimeInterval)? { get }
+  
+  var targetQueue: DispatchQueue { get }
 }
 
 // MARK: -
@@ -60,6 +62,9 @@ public final class Patron: JSONService {
   /// which it occured in seconds since `00:00:00 UTC on 1 January 1970`. The
   /// next successful request resets `status` to `nil`.
   public var status: (Int, TimeInterval)?
+  
+  /// The dispatch queue to which callbacks are submitted.
+  public var targetQueue: DispatchQueue { get { return target } }
   
   /// Creates a client for the service at the provided URL.
   ///

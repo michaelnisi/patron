@@ -129,6 +129,12 @@ var status: (Int, TimeInterval)? { get }
 
 The last `URLSession` or `JSONSerialization` error code, and the timestamp at which it occured in Unix time, seconds since `00:00:00 UTC on 1 January 1970`. The next successful request resets `status` to `nil`.
 
+```swift
+var targetQueue: DispatchQueue { get }
+```
+
+The dispatch queue to which callbacks are submitted.
+
 ## Install
 
 Add the Patron Xcode project to your Workspace—at this time, it only contains an iOS target that builds a dynamic framework. Patron only depends on [Foundation](https://developer.apple.com/reference/Foundation).
