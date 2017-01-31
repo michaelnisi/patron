@@ -1,14 +1,14 @@
 ### 4.0.2 (2017-01-31)
 
-Maintenance
+Just some maintenance sliding into the new year.
 
 - [fa59561](https://github.com/michaelnisi/patron/commit/fa59561d5709f29760a9a05b9e9e1ea3259ffaa6) Remove `node_modules` from repo.
 ([@michaelnisi](https://github.com/michaelnisi))
 
-- [ab7aeab](https://github.com/michaelnisi/patron/commit/ab7aeab2863c104a4672c51be6936503945a1097) Installing Node.js dependencies before testing.
+- [ab7aeab](https://github.com/michaelnisi/patron/commit/ab7aeab2863c104a4672c51be6936503945a1097) Installing Node.js dependencies before testing to fix Travis CI build.
 ([@michaelnisi](https://github.com/michaelnisi))
 
-- [e893fc5](https://github.com/michaelnisi/patron/commit/e893fc5cfa783f4dce641e061caa3be62c7b05ba) Upgrade to Xcode 8.2.1.
+- [e893fc5](https://github.com/michaelnisi/patron/commit/e893fc5cfa783f4dce641e061caa3be62c7b05ba) Upgrade to Xcode 8.2.1, breaking the Travis CI build.
 ([@michaelnisi](https://github.com/michaelnisi))
 
 ### 4.0.1 (2016-10-28)
