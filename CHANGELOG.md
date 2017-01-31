@@ -8,7 +8,7 @@ Just some maintenance sliding into the new year.
 - [ab7aeab](https://github.com/michaelnisi/patron/commit/ab7aeab2863c104a4672c51be6936503945a1097) Installing Node.js dependencies before testing to fix Travis CI build.
 ([@michaelnisi](https://github.com/michaelnisi))
 
-- [e893fc5](https://github.com/michaelnisi/patron/commit/e893fc5cfa783f4dce641e061caa3be62c7b05ba) Upgrade to Xcode 8.2.1, breaking the Travis CI build.
+- [e893fc5](https://github.com/michaelnisi/patron/commit/e893fc5cfa783f4dce641e061caa3be62c7b05ba) Upgrade to Xcode 8.2.1, yielding a broken Travis CI build, caused by missing Node.js dependencies, required for running the tests.
 ([@michaelnisi](https://github.com/michaelnisi))
 
 ### 4.0.1 (2016-10-28)
