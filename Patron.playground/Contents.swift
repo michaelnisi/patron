@@ -4,6 +4,8 @@ import Foundation
 import Patron
 import PlaygroundSupport
 
+URLCache.shared = URLCache(memoryCapacity: 0, diskCapacity: 0, diskPath: nil)
+
 let url = URL(string: "https://api.github.com")!
 let session = URLSession.shared
 let target = DispatchQueue.main

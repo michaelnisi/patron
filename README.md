@@ -5,7 +5,7 @@
 
 Consume JSON HTTP APIs.
 
-Programs often communicate over [HTTP](http://httpwg.org/). The de facto standard notation for this communication is [JSON](http://www.json.org/). Patron provides a simple interface to send and receive data to and from HTTP servers. It’s purpose is to reduce redundant client code in our programs.
+Programs often communicate over [HTTP](http://httpwg.org/). The de facto standard notation for payloads in this communication is [JSON](http://www.json.org/). Patron provides a simple interface to send and receive data to and from HTTP servers. It’s purpose is to reduce redundant client code in our programs.
 
 ## Symbols
 
@@ -87,6 +87,22 @@ patron.get(path: "/search/repositories?q=language:swift") { json, res, er in
 ```
 
 Find this example in the Playground included in this repo.
+
+#### More Parameters
+
+For more control, there‘s an alternative method with `allowsCellularAccess` and `cachePolicy` parameters.
+
+```swift
+@discardableResult func get(
+  path: String,
+  allowsCellularAccess: Bool,
+  cachePolicy: URLRequest.CachePolicy,
+  cb: @escaping (AnyObject?, URLResponse?, Error?) -> Void
+) -> URLSessionTask
+```
+
+- `allowsCellularAccess` `true` if the request is allowed to use cellular radios.
+- `cachePolicy` The cache policy of the request.
 
 ### Issuing POST Requests
 

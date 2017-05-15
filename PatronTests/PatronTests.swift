@@ -164,7 +164,7 @@ final class PatronTests: XCTestCase {
     let svc = self.svc
     
     try! svc?.post(path: "/echo", json: payload as AnyObject) { json, response, error in
-      XCTAssertNil(error, "should not error: \(error)")
+      XCTAssertNil(error, "should not error: \(String(describing: error))")
       XCTAssertNotNil(response)
       XCTAssertNotNil(json)
       
@@ -173,7 +173,7 @@ final class PatronTests: XCTestCase {
       if let found = json as? [String : String] {
         XCTAssertEqual(found, wanted)
       } else {
-        XCTFail("unexpected \(json) \(response)")
+        XCTFail("unexpected \(String(describing: json)) \(String(describing: response))")
       }
       
       exp.fulfill()
@@ -188,7 +188,7 @@ final class PatronTests: XCTestCase {
     let exp = expectation(description: "Get")
 
     svc.get(path: "/hello/michael") { json, response, error in
-      XCTAssertNil(error, "should not error: \(error)")
+      XCTAssertNil(error, "should not error: \(String(describing: error))")
       XCTAssertNotNil(response)
       XCTAssertNotNil(json)
 
@@ -208,7 +208,7 @@ final class PatronTests: XCTestCase {
     let exp = expectation(description: "GetArrayOfDictionaries")
     
     svc.get(path: "/potus") { json, response, error in
-      XCTAssertNil(error, "should not error: \(error)")
+      XCTAssertNil(error, "should not error: \(String(describing: error))")
       XCTAssertNotNil(response)
       XCTAssertNotNil(json)
     
