@@ -25,7 +25,7 @@ The `JSONService` protocol defines a JSON service.
 
 The `Patron` class is a convenient way to represent a remote HTTP JSON service endpoint. A `Patron` object provides access to a single service on a specific host via `GET` and `POST` HTTP methods. It assumes that payloads in both directions are JSON.
 
-As `Patron` serializes JSON payloads on the calling thread, it’s not a good idea to use it from the main thread, instead I recommend to run it from within an `Operation`. Usually there is more work to do with the results of your requests: Why not wrap everything neatly into an operation and execute off the main thread?
+As `Patron` serializes JSON payloads on the calling thread, it’s not a good idea to use it from the main thread, instead I recommend, you run it from within an `Operation`, or a closure dispatched to another queue. Usually there is more work required anyways, serialization obviously, which should be offloaded from the main thread.
 
 ### Creating a Client
 
@@ -105,7 +105,7 @@ Issues a `GET` request with query string to the remote API.
 #### Parameters
 
 - `path` The URL path including first slash, for example `"/user"`.
-- `query` An array of URL query items from the `Foundation` framework.
+- `query` An array of URL query items from the [Foundation](https://developer.apple.com/documentation/foundation/urlqueryitem).
 - `cb` The callback receiving the JSON result as its first parameter, followed by response, and error. All callback parameters may be `nil`.
 
 #### Returns
