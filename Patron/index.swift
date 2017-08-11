@@ -12,15 +12,22 @@ import Foundation
 
 public enum PatronError: Error {
   case invalidJSON
+  case invalidURL(String, [URLQueryItem]?)
 }
 
-/// Defines client side HTTP JSON service API.
+/// Defines a JSON HTTP client.
 public protocol JSONService {
 
   @discardableResult func get(
     path: String,
     cb: @escaping (AnyObject?, URLResponse?, Error?) -> Void
   ) -> URLSessionTask
+
+  @discardableResult func get(
+    path: String,
+    with query: [URLQueryItem],
+    cb: @escaping (AnyObject?, URLResponse?, Error?) -> Void
+  ) throws -> URLSessionTask
 
   @discardableResult func post(
     path: String,
@@ -50,13 +57,12 @@ public protocol JSONService {
 /// payloads in both directions are JSON.
 ///
 /// As `Patron` serializes JSON payloads on the calling thread, it is not the
-/// best idea to use it from the main thread, instead, at least I tend to, run
-/// it from within an `Operation`, because usually there is more work to do with
-/// the results of your requests anyways; so why not wrap everything neatly into
-/// an operation and execute *off* the main thread.
+/// best idea to use it from the main thread, instead, it is intended to run
+/// within an `Operation` or a closure, off the main thread, encapsulating
+/// request, response, and serialization.
 public final class Patron: JSONService {
 
-  private let baseURL: URL
+  fileprivate let baseURL: URL
 
   private let session: URLSession
 
@@ -75,11 +81,12 @@ public final class Patron: JSONService {
 
   /// Creates a client for the service at the provided URL.
   ///
-  /// - parameter URL: The URL of the service.
-  /// - parameter session: The session to use for HTTP requests.
-  /// - parameter target: A dispatch queue on which to submit callbacks.
+  /// - Parameters:
+  ///   - URL: The URL of the service.
+  ///   - session: The session to use for HTTP requests.
+  ///   - target: A dispatch queue on which to submit callbacks.
   ///
-  /// - returns: The newly initialized `Patron` client.
+  /// - Returns: The newly initialized `Patron` client.
   public init(
     URL baseURL: URL,
     session: URLSession,
@@ -94,7 +101,7 @@ public final class Patron: JSONService {
     session.invalidateAndCancel()
   }
 
-  private func dataTaskWithRequest(
+  fileprivate func dataTaskWithRequest(
     _ req: URLRequest,
     cb: @escaping (AnyObject?, URLResponse?, Error?) -> Void
   ) -> URLSessionTask {
@@ -132,61 +139,34 @@ public final class Patron: JSONService {
 
   /// Issues a `GET` request to the remote API.
   ///
-  /// - parameter path: The URL path including first slash, for example "/user".
-  /// - parameter cb: The callback receiving the JSON result as its first
-  /// parameter, followed by response, and error. All callback parameters may be
-  /// `nil`.
+  /// - Parameters:
+  ///   - path: The URL path including first slash, for example "/user".
+  ///   - cb: The callback receiving the JSON result as its first parameter,
+  /// followed by response, and error. All callback parameters may be `nil`.
   ///
-  /// - returns: An executing `URLSessionTask`.
+  /// - Returns: An executing `URLSessionTask`.
   public func get(
     path: String,
     cb: @escaping (AnyObject?, URLResponse?, Error?) -> Void
   ) -> URLSessionTask {
-
     let url = URL(string: path, relativeTo: baseURL)!
     let req = URLRequest(url: url)
 
     return dataTaskWithRequest(req, cb: cb)
   }
 
-  /// Issues a `GET` request to the remote API, allowing additional parameters.
-  ///
-  /// - parameter path: The URL path including first slash, for example "/user".
-  /// - parameter cb: The callback receiving the JSON result as its first
-  /// parameter, followed by response, and error. All callback parameters may be
-  /// `nil`.
-  /// - parameter allowsCellularAccess: `true` if the request is allowed to use
-  /// cellular radios.
-  /// - parameter cachePolicy: The cache policy of the request.
-  ///
-  /// - returns: An executing `URLSessionTask`.
-  public func get(
-    path: String,
-    allowsCellularAccess: Bool,
-    cachePolicy: URLRequest.CachePolicy,
-    cb: @escaping (AnyObject?, URLResponse?, Error?) -> Void
-  ) -> URLSessionTask {
-
-    let url = URL(string: path, relativeTo: baseURL)!
-
-    var req = URLRequest(url: url)
-    req.allowsCellularAccess = allowsCellularAccess
-    req.cachePolicy = cachePolicy
-
-    return dataTaskWithRequest(req, cb: cb)
-  }
-
   /// Issues a `POST` request to the remote API.
   ///
-  /// - parameter path: The URL path.
-  /// - parameter json: The payload to send as the body of this request.
-  /// - parameter cb: The callback receiving the JSON result as its first
+  /// - Parameters:
+  ///   - path: The URL path.
+  ///   - json: The payload to send as the body of this request.
+  ///   - cb: The callback receiving the JSON result as its first
   /// parameter, followed by response, and error. All callback parameters may be
   /// `nil`.
   ///
-  /// - returns: An executing `URLSessionTask`.
+  /// - Returns: An executing `URLSessionTask`.
   ///
-  /// - throws: `PatronError.InvalidJSON`, if the potential `json` payload is
+  /// - Throws: `PatronError.InvalidJSON`, if the potential `json` payload is
   /// not serializable to JSON by `NSJSONSerialization`.
   public func post(
     path: String,
@@ -209,4 +189,78 @@ public final class Patron: JSONService {
 
     return dataTaskWithRequest(req as URLRequest, cb: cb)
   }
+}
+
+// MARK: - Additional Parameters
+
+extension Patron {
+
+  /// Issues a `GET` request to the remote API, allowing additional parameters.
+  ///
+  /// - Parameters:
+  ///   - path: The URL path including first slash, for example "/user".
+  ///   - cb: The callback receiving the JSON result as its first
+  /// parameter, followed by response, and error. All callback parameters may be
+  /// `nil`.
+  ///   - allowsCellularAccess: `true` if the request is allowed to use
+  /// cellular radios.
+  ///   - cachePolicy: The cache policy of the request.
+  ///
+  /// - Returns: An executing `URLSessionTask`.
+  public func get(
+    path: String,
+    allowsCellularAccess: Bool,
+    cachePolicy: URLRequest.CachePolicy,
+    cb: @escaping (AnyObject?, URLResponse?, Error?) -> Void
+  ) -> URLSessionTask {
+
+    let url = URL(string: path, relativeTo: baseURL)!
+
+    var req = URLRequest(url: url)
+    req.allowsCellularAccess = allowsCellularAccess
+    req.cachePolicy = cachePolicy
+
+    return dataTaskWithRequest(req, cb: cb)
+  }
+
+}
+
+// MARK: - Query String
+
+extension Patron {
+
+  /// Issues a `GET` request with a query string to the remote API.
+  ///
+  /// - Parameters:
+  ///   - path: The URL path including first slash, for example "/user".
+  ///   - query: The query items of the request.
+  ///   - cb: The callback receiving the JSON result as its first parameter,
+  /// followed by response, and error. All callback parameters may be `nil`.
+  ///
+  /// - Returns: An executing `URLSessionTask`.
+  ///
+  /// - Throws: Might throw `PatronError.invalidURL(String, [URLQueryItem]?)`.
+  public func get(
+    path: String,
+    with query: [URLQueryItem],
+    cb: @escaping (AnyObject?, URLResponse?, Error?) -> Void
+  ) throws -> URLSessionTask {
+
+    guard
+      let a = URL(string: path, relativeTo: baseURL),
+      var comps = URLComponents(url: a, resolvingAgainstBaseURL: true) else {
+        throw PatronError.invalidURL(path, query)
+    }
+
+    comps.queryItems = query
+
+    guard let url = comps.url else {
+      throw PatronError.invalidURL(path, query)
+    }
+
+    let req = URLRequest(url: url)
+
+    return dataTaskWithRequest(req, cb: cb)
+  }
+
 }

@@ -88,7 +88,31 @@ patron.get(path: "/search/repositories?q=language:swift") { json, res, er in
 
 Find this example in the Playground included in this repo.
 
-#### More Parameters
+#### Query String
+
+If you don‘t feel like stringing together the path yourself, you can pass URL query items.
+
+```swift
+@discardableResult func get(
+  path: String,
+  with query: [URLQueryItem],
+  cb: @escaping (AnyObject?, URLResponse?, Error?) -> Void
+) throws -> URLSessionTask
+```
+
+Issues a `GET` request with query string to the remote API.
+
+#### Parameters
+
+- `path` The URL path including first slash, for example "/user".
+- `query` An array of URL query items from the `Foundation` framework.
+- `cb` The callback receiving the JSON result as its first parameter, followed by response, and error. All callback parameters may be `nil`.
+
+#### Returns
+
+An executing `URLSessionTask`.
+
+#### Additional Parameters
 
 For more control, there‘s an alternative method with `allowsCellularAccess` and `cachePolicy` parameters.
 
