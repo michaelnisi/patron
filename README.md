@@ -58,7 +58,7 @@ Issues a `GET` request to the remote API.
 
 #### Parameters
 
-- `path` The URL path including first slash, for example "/user".
+- `path` The URL path including first slash, for example `"/user"`.
 - `cb` The callback receiving the JSON result as its first parameter, followed by response, and error. All callback parameters may be `nil`.
 
 #### Returns
@@ -104,7 +104,7 @@ Issues a `GET` request with query string to the remote API.
 
 #### Parameters
 
-- `path` The URL path including first slash, for example "/user".
+- `path` The URL path including first slash, for example `"/user"`.
 - `query` An array of URL query items from the `Foundation` framework.
 - `cb` The callback receiving the JSON result as its first parameter, followed by response, and error. All callback parameters may be `nil`.
 

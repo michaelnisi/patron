@@ -139,51 +139,6 @@ final class PatronTests: XCTestCase {
     }
   }
   
-  func testPostInvalidJSON() {
-    let exp = expectation(description: "PostInvalidJSON")
-    
-    do {
-      try svc.post(path: "/echo", json: self) { _, _, _ in
-        XCTFail("should not be called")
-      }
-    } catch PatronError.invalidJSON {
-      exp.fulfill()
-    } catch {
-      XCTFail()
-    }
-
-    self.waitForExpectations(timeout: 10) { er in
-      XCTAssertNil(er)
-    }
-  }
-  
-  func testPost() {
-    let exp = expectation(description: "Post")
-    
-    let payload  = ["name": "michael"]
-    let svc = self.svc
-    
-    try! svc?.post(path: "/echo", json: payload as AnyObject) { json, response, error in
-      XCTAssertNil(error, "should not error: \(String(describing: error))")
-      XCTAssertNotNil(response)
-      XCTAssertNotNil(json)
-      
-      let wanted = payload
-      
-      if let found = json as? [String : String] {
-        XCTAssertEqual(found, wanted)
-      } else {
-        XCTFail("unexpected \(String(describing: json)) \(String(describing: response))")
-      }
-      
-      exp.fulfill()
-    }
-    
-    self.waitForExpectations(timeout: 10) { er in
-      XCTAssertNil(er)
-    }
-  }
-  
   func testGet() {
     let exp = expectation(description: "Get")
 
@@ -224,4 +179,76 @@ final class PatronTests: XCTestCase {
       XCTAssertNil(er)
     }
   }
+  
+  func testGetWithQuery() {
+    let exp = expectation(description: "Get")
+    
+    let query = [
+      URLQueryItem(name: "q", value: "love"),
+      URLQueryItem(name: "max", value: "10")
+    ]
+    
+    try! svc.get(path: "/query_echo", with: query) { json, response, error in
+      XCTAssertNil(error, "should not error: \(String(describing: error))")
+      XCTAssertNotNil(response)
+      XCTAssertNotNil(json)
+      
+      let wanted = ["q": "love", "max": "10"]
+      let found = json as! [String : String]
+      XCTAssertEqual(found, wanted)
+      
+      exp.fulfill()
+    }
+    
+    self.waitForExpectations(timeout: 10) { er in
+      XCTAssertNil(er)
+    }
+  }
+ 
+  func testPostInvalidJSON() {
+    let exp = expectation(description: "PostInvalidJSON")
+    
+    do {
+      try svc.post(path: "/echo", json: self) { _, _, _ in
+        XCTFail("should not be called")
+      }
+    } catch PatronError.invalidJSON {
+      exp.fulfill()
+    } catch {
+      XCTFail()
+    }
+    
+    self.waitForExpectations(timeout: 10) { er in
+      XCTAssertNil(er)
+    }
+  }
+  
+  func testPost() {
+    let exp = expectation(description: "Post")
+    
+    let payload  = ["name": "michael"]
+    let svc = self.svc
+    
+    try! svc?.post(path: "/echo", json: payload as AnyObject) { json, response, error in
+      XCTAssertNil(error, "should not error: \(String(describing: error))")
+      XCTAssertNotNil(response)
+      XCTAssertNotNil(json)
+      
+      let wanted = payload
+      
+      if let found = json as? [String : String] {
+        XCTAssertEqual(found, wanted)
+      } else {
+        XCTFail("unexpected \(String(describing: json)) \(String(describing: response))")
+      }
+      
+      exp.fulfill()
+    }
+    
+    self.waitForExpectations(timeout: 10) { er in
+      XCTAssertNil(er)
+    }
+  }
+  
 }
+
