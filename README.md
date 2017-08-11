@@ -21,6 +21,10 @@ The `Patron` object represents a remote HTTP JSON service endpoint.
 
 The `JSONService` protocol defines a JSON service.
 
+### Structures
+
+- PatronError
+
 ## Patron
 
 The `Patron` class is a convenient way to represent a remote HTTP JSON service endpoint. A `Patron` object provides access to a single service on a specific host via `GET` and `POST` HTTP methods. It assumes that payloads in both directions are JSON.
@@ -105,7 +109,7 @@ Issues a `GET` request with query string to the remote API.
 #### Parameters
 
 - `path` The URL path including first slash, for example `"/user"`.
-- `query` An array of URL query items from the [Foundation](https://developer.apple.com/documentation/foundation/urlqueryitem).
+- `query` An array of URL query items from [Foundation](https://developer.apple.com/documentation/foundation/urlqueryitem).
 - `cb` The callback receiving the JSON result as its first parameter, followed by response, and error. All callback parameters may be `nil`.
 
 #### Returns
