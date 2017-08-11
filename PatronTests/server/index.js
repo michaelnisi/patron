@@ -47,7 +47,13 @@ function potus (req, res, next) {
   next()
 }
 
+function queryEcho (req, res, next) {
+  res.send(req.query)
+  next()
+}
+
 const server = restify.createServer()
+server.use(restify.plugins.queryParser())
 
 server.get('/hello/:name', hello)
 server.head('/hello/:name', hello)
@@ -63,6 +69,9 @@ server.get('/invalid', invalid)
 
 server.head('/potus', potus)
 server.get('/potus', potus)
+
+server.head('/query_echo', queryEcho)
+server.get('/query_echo', queryEcho)
 
 server.listen(8080, () => {
   console.log('%s listening at %s', server.name, server.url)
