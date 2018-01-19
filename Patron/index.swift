@@ -45,8 +45,6 @@ public protocol JSONService {
   var host: String { get }
 
   var status: (Int, TimeInterval)? { get }
-
-  var targetQueue: DispatchQueue { get }
 }
 
 // MARK: -
@@ -66,8 +64,6 @@ public final class Patron: JSONService {
 
   private let session: URLSession
 
-  private let target: DispatchQueue
-
   /// The hostname of the remote service.
   public var host: String { get { return baseURL.host! } }
 
@@ -76,25 +72,16 @@ public final class Patron: JSONService {
   /// next successful request resets `status` to `nil`.
   public var status: (Int, TimeInterval)?
 
-  /// The dispatch queue to which callbacks are submitted.
-  public var targetQueue: DispatchQueue { get { return target } }
-
   /// Creates a client for the service at the provided URL.
   ///
   /// - Parameters:
   ///   - URL: The URL of the service.
   ///   - session: The session to use for HTTP requests.
-  ///   - target: A dispatch queue on which to submit callbacks.
   ///
   /// - Returns: The newly initialized `Patron` client.
-  public init(
-    URL baseURL: URL,
-    session: URLSession,
-    target: DispatchQueue
-  ) {
+  public init(URL baseURL: URL, session: URLSession) {
     self.baseURL = baseURL
     self.session = session
-    self.target = target
   }
 
   deinit {
@@ -105,19 +92,16 @@ public final class Patron: JSONService {
     _ req: URLRequest,
     cb: @escaping (AnyObject?, URLResponse?, Error?) -> Void
   ) -> URLSessionTask {
-    let task = session.dataTask(with: req, completionHandler: { data, res, error in
-
-      func dispatch(_ json: Any?, _ error: Error?) {
+    let task = session.dataTask(with: req) { data, res, error in
+      func done(_ json: Any?, _ error: Error?) {
         if let er = error {
           self.status = (er._code, Date().timeIntervalSince1970)
         }
-        self.target.async {
-          cb(json as AnyObject?, res, error)
-        }
+        cb(json as AnyObject?, res, error)
       }
 
       guard error == nil else {
-        return dispatch(nil, error)
+        return done(nil, error)
       }
 
       self.status = nil
@@ -126,11 +110,11 @@ public final class Patron: JSONService {
         let json = try JSONSerialization.jsonObject(
           with: data!, options: []
         )
-        dispatch(json, nil)
+        done(json, nil)
       } catch let er {
-        dispatch(nil, er)
+        done(nil, er)
       }
-    })
+    }
 
     task.resume()
 
@@ -173,7 +157,6 @@ public final class Patron: JSONService {
     json: AnyObject,
     cb: @escaping (AnyObject?, URLResponse?, Error?) -> Void
   ) throws -> URLSessionTask {
-
     guard JSONSerialization.isValidJSONObject(json) else {
       throw PatronError.invalidJSON
     }
@@ -213,7 +196,6 @@ extension Patron {
     cachePolicy: URLRequest.CachePolicy,
     cb: @escaping (AnyObject?, URLResponse?, Error?) -> Void
   ) -> URLSessionTask {
-
     let url = URL(string: path, relativeTo: baseURL)!
 
     var req = URLRequest(url: url)
@@ -245,11 +227,9 @@ extension Patron {
     with query: [URLQueryItem],
     cb: @escaping (AnyObject?, URLResponse?, Error?) -> Void
   ) throws -> URLSessionTask {
-
-    guard
-      let a = URL(string: path, relativeTo: baseURL),
+    guard let a = URL(string: path, relativeTo: baseURL),
       var comps = URLComponents(url: a, resolvingAgainstBaseURL: true) else {
-        throw PatronError.invalidURL(path, query)
+      throw PatronError.invalidURL(path, query)
     }
 
     comps.queryItems = query
