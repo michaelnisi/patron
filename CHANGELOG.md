@@ -1,3 +1,7 @@
+### 6.0.0 (2018-01-19)
+
+- TODO
+
 ### 4.0.2 (2017-01-31)
 
 Just some maintenance sliding into the new year.

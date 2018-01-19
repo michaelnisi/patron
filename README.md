@@ -34,7 +34,7 @@ As `Patron` serializes JSON payloads on the calling thread, it’s not a good id
 ### Creating a Client
 
 ```swift
-init(URL baseURL: URL, session: URLSession, target: DispatchQueue)
+init(URL baseURL: URL, session: URLSession)
 ```
 
 Creates a client for the service at the specified `URL`.
@@ -43,7 +43,6 @@ Creates a client for the service at the specified `URL`.
 
 - `URL` The URL of the service.
 - `session` The session to use for HTTP requests.
-- `target` A dispatch queue on which to submit callbacks.
 
 #### Returns
 
@@ -78,10 +77,7 @@ import Foundation
 import Patron
 
 let github = URL(string: "https://api.github.com")!
-let shared = URLSession.shared
-let main = DispatchQueue.main
-
-let patron = Patron(URL: github, session: shared, target: main)
+let patron = Patron(URL: github, session: URLSession.shared)
 
 patron.get(path: "/search/repositories?q=language:swift") { json, res, er in
   let repos = json!["items"] as! [[String : AnyObject]]
