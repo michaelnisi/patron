@@ -24,9 +24,8 @@ final class PatronTests: XCTestCase {
   fileprivate func freshService(_ port: Int) -> Patron {
     let url = URL(string: "http://localhost:\(port)")!
     let s = freshSession()
-    let t = DispatchQueue.main
-    
-    return Patron(URL: url, session: s, target: t)
+
+    return Patron(URL: url, session: s)
   }
   
   override func setUp() {

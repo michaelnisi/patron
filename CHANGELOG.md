@@ -1,4 +1,14 @@
-### 4.0.2 (2017-01-31)
+# Changelog
+
+## [6.0.0] (2018-01-19)
+
+Turns out, making no assumptions about where callback blocks run is good practice.
+
+## Removed
+
+- Remove target dispatch queue by @michaelnisi
+
+## [4.0.2] (2017-01-31)
 
 Just some maintenance sliding into the new year.
 
@@ -11,7 +21,7 @@ Just some maintenance sliding into the new year.
 - [e893fc5](https://github.com/michaelnisi/patron/commit/e893fc5cfa783f4dce641e061caa3be62c7b05ba) Upgrade to Xcode 8.2.1, yielding a broken Travis CI build, caused by missing Node.js dependencies, required for running the tests.
 ([@michaelnisi](https://github.com/michaelnisi))
 
-### 4.0.1 (2016-10-28)
+## [4.0.1] (2016-10-28)
 
 Updating dependent libs, I learned that I needed these two practical tweaks.
 
@@ -21,37 +31,37 @@ Updating dependent libs, I learned that I needed these two practical tweaks.
 - [06fc9a1](https://github.com/michaelnisi/patron/commit/06fc9a1449bea10b0777d186d1d50c7ed100f934) Complying with Apple’s recommendation, supporting the latest two iOS versions, this sets the iOS deployment target to 9.0.
 ([@michaelnisi](https://github.com/michaelnisi))
 
-### 4.0.0 (2016-10-22)
+## [4.0.0] (2016-10-22)
 
 Realizing that callbacks should pass `AnyObject?` instead of `Any?`, I’ve decided to roll back the previous change. However, this comes with the drawback of not allowing fragments in JSON HTTP bodies, but this is acceptable, a decent JSON API should not return unboxed primitives.
 ([@michaelnisi](https://github.com/michaelnisi))
 
-#### Callbacks
+### Callbacks
 
 - Type `json` as `AnyObject` instead of `Any`
 
-#### Documentation
+### Documentation
 
 - Write a nice README
 
-### 3.0.0 (2016-10-20)
+## [3.0.0] (2016-10-20)
 
 The objective of this release is Swift 3 and Xcode 8, while improving CI.
 ([@michaelnisi](https://github.com/michaelnisi))
 
-#### Swift 3
+### Swift 3
 
 - Migrate to Swift 3
 
-#### XCode 8
+### XCode 8
 
 - Use `PlaygroundSupport` in Playground
 
-#### Code Coverage
+### Code Coverage
 
 - Gather test coverage data for iOS
 - Add [CodeCov](https://codecov.io/)-badge
 
-#### CI
+### CI
 
 - Conditionally start test server via Xcode Run Script or Make
