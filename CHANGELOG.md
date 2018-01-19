@@ -4,7 +4,7 @@
 
 Turns out, making no assumptions about where callback blocks run is good practice.
 
-### Removed
+### Dispatch
 
 - [3e0e8c9](https://github.com/michaelnisi/patron/commit/3e0e8c9a7e29f50753526a6f28ee6945efb19d19) Remove target dispatch queue
 ([@michaelnisi](https://github.com/michaelnisi))
