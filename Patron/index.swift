@@ -66,11 +66,26 @@ public final class Patron: JSONService {
 
   /// The hostname of the remote service.
   public var host: String { get { return baseURL.host! } }
+  
+  private let sQueue = DispatchQueue(label: "ink.codes.patron-\(UUID().uuidString)")
+  
+  private var _status: (Int, TimeInterval)?
 
   /// The last `NSURL` or `JSONSerialization` error code, and the timestamp at
   /// which it occured in seconds since `00:00:00 UTC on 1 January 1970`. The
   /// next successful request resets `status` to `nil`.
-  public var status: (Int, TimeInterval)?
+  public var status: (Int, TimeInterval)? {
+    get {
+      return sQueue.sync {
+        return _status
+      }
+    }
+    set {
+      sQueue.sync {
+        _status = newValue
+      }
+    }
+  }
 
   /// Creates a client for the service at the provided URL.
   ///
