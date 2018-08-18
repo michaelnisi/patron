@@ -34,7 +34,7 @@ As `Patron` serializes JSON payloads on the calling thread, it’s not a good id
 ### Creating a Client
 
 ```swift
-init(URL baseURL: URL, session: URLSession)
+init(URL baseURL: URL, session: URLSession, log: OSLog)
 ```
 
 Creates a client for the service at the specified `URL`.
@@ -43,6 +43,7 @@ Creates a client for the service at the specified `URL`.
 
 - `URL` The URL of the service.
 - `session` The session to use for HTTP requests.
+- `log` The log to use, the shared disabled log by default.
 
 #### Returns
 
