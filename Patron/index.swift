@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import os.log
 
 // MARK: API
 
@@ -44,6 +45,9 @@ public protocol JSONService {
 
   var host: String { get }
 
+  /// The last `URL` or `JSONSerialization` error code, and the timestamp of
+  /// its occurrence in seconds since `00:00:00 UTC on 1 January 1970`. The
+  /// next successful request resets `status` to `nil`.
   var status: (Int, TimeInterval)? { get }
 }
 
@@ -64,6 +68,8 @@ public final class Patron: JSONService {
 
   private let session: URLSession
 
+  private let log: OSLog
+
   /// The hostname of the remote service.
   public var host: String { get { return baseURL.host! } }
   
@@ -71,9 +77,6 @@ public final class Patron: JSONService {
   
   private var _status: (Int, TimeInterval)?
 
-  /// The last `NSURL` or `JSONSerialization` error code, and the timestamp at
-  /// which it occured in seconds since `00:00:00 UTC on 1 January 1970`. The
-  /// next successful request resets `status` to `nil`.
   public var status: (Int, TimeInterval)? {
     get {
       return sQueue.sync {
@@ -92,11 +95,13 @@ public final class Patron: JSONService {
   /// - Parameters:
   ///   - URL: The URL of the service.
   ///   - session: The session to use for HTTP requests.
+  ///   - log: The log to use, the shared disabled log by default.
   ///
   /// - Returns: The newly initialized `Patron` client.
-  public init(URL baseURL: URL, session: URLSession) {
+  public init(URL baseURL: URL, session: URLSession, log: OSLog = .disabled) {
     self.baseURL = baseURL
     self.session = session
+    self.log = log
   }
 
   deinit {
@@ -151,6 +156,8 @@ public final class Patron: JSONService {
     let url = URL(string: path, relativeTo: baseURL)!
     let req = URLRequest(url: url)
 
+    os_log("GET: %@, %@", log: log, type: .debug, url as CVarArg, req as CVarArg)
+    
     return dataTaskWithRequest(req, cb: cb)
   }
 
@@ -185,6 +192,9 @@ public final class Patron: JSONService {
     req.httpBody = data
     req.httpMethod = "POST"
 
+    os_log("POST: %@, %@, %@",
+           log: log, type: .debug, url as CVarArg, req, data as CVarArg)
+
     return dataTaskWithRequest(req as URLRequest, cb: cb)
   }
 }
@@ -216,6 +226,8 @@ extension Patron {
     var req = URLRequest(url: url)
     req.allowsCellularAccess = allowsCellularAccess
     req.cachePolicy = cachePolicy
+
+    os_log("GET: %@, %@", log: log, type: .debug, url as CVarArg, req as CVarArg)
 
     return dataTaskWithRequest(req, cb: cb)
   }
@@ -254,6 +266,8 @@ extension Patron {
     }
 
     let req = URLRequest(url: url)
+
+    os_log("GET: %@, %@", log: log, type: .debug, url as CVarArg, req as CVarArg)
 
     return dataTaskWithRequest(req, cb: cb)
   }
