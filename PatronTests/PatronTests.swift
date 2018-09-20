@@ -40,7 +40,7 @@ final class PatronTests: XCTestCase {
   
   func testDeinit() {
     let exp = expectation(description: "Deinit")
-    
+      
     svc.get(path: "/slow") { json, res, er in
       XCTAssertNil(er)
       XCTAssertNotNil(res)
