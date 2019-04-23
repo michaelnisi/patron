@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0940"
+   LastUpgradeVersion = "1020"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -33,7 +33,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "if [ &quot;$PATRON_CLI&quot; = &quot;1&quot; ]; then&#10;    exit&#10;else&#10;    cd $SRCROOT/PatronTests &amp;&amp; PATH=/opt/pkg/bin:/usr/local/bin::$PATH ./start_server.sh&#10;fi">
+               scriptText = "if [ &quot;$PATRON_CLI&quot; = &quot;1&quot; ]; then&#10;    exit&#10;else&#10;    cd $SRCROOT/PatronTests &amp;&amp; PATH=/opt/pkg/bin:/usr/local/bin::$PATH ./start_server.sh&#10;fi&#10;">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
