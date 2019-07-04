@@ -15,7 +15,7 @@ final class PatronTests: XCTestCase {
   
   fileprivate func freshSession() -> URLSession {
     let conf = URLSessionConfiguration.default
-    conf.httpShouldUsePipelining = true
+    conf.httpShouldUsePipelining = false
     conf.requestCachePolicy = .reloadIgnoringLocalCacheData
     
     return URLSession(configuration: conf)
