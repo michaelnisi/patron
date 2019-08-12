@@ -71,11 +71,11 @@ public final class Patron: JSONService {
   private let log: OSLog
 
   /// The hostname of the remote service.
-  public var host: String { get { return baseURL.host! } }
+  public var host: String { return baseURL.host! }
   
   private let sQueue = DispatchQueue(
     label: "ink.codes.patron-\(UUID().uuidString)",
-    target: .global()
+    target: .global(qos: .userInitiated)
   )
   
   private var _status: (Int, TimeInterval)?
