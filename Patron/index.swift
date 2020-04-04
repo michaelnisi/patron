@@ -196,7 +196,7 @@ public final class Patron: JSONService {
     req.httpMethod = "POST"
 
     os_log("POST: %@, %@, %@",
-           log: log, type: .debug, url as CVarArg, req, data as CVarArg)
+           log: log, type: .debug, url as CVarArg, req, String(data: data, encoding: .utf8)!)
 
     return dataTaskWithRequest(req as URLRequest, cb: cb)
   }
