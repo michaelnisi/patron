@@ -159,7 +159,7 @@ public final class Patron: JSONService {
     let url = URL(string: path, relativeTo: baseURL)!
     let req = URLRequest(url: url)
 
-    os_log("GET: %@, %@", log: log, type: .debug, url as CVarArg, req as CVarArg)
+    os_log("GET: %@, %@", log: log, type: .info, url as CVarArg, req as CVarArg)
     
     return dataTaskWithRequest(req, cb: cb)
   }
@@ -196,7 +196,7 @@ public final class Patron: JSONService {
     req.httpMethod = "POST"
 
     os_log("POST: %@, %@, %@",
-           log: log, type: .debug, url as CVarArg, req, String(data: data, encoding: .utf8)!)
+           log: log, type: .info, url as CVarArg, req, String(data: data, encoding: .utf8)!)
 
     return dataTaskWithRequest(req as URLRequest, cb: cb)
   }
@@ -230,7 +230,7 @@ extension Patron {
     req.allowsCellularAccess = allowsCellularAccess
     req.cachePolicy = cachePolicy
 
-    os_log("GET: %@, %@", log: log, type: .debug, url as CVarArg, req as CVarArg)
+    os_log("GET: %@, %@", log: log, type: .info, url as CVarArg, req as CVarArg)
 
     return dataTaskWithRequest(req, cb: cb)
   }
@@ -270,7 +270,7 @@ extension Patron {
 
     let req = URLRequest(url: url)
 
-    os_log("GET: %@, %@", log: log, type: .debug, url as CVarArg, req as CVarArg)
+    os_log("GET: %@, %@", log: log, type: .info, url as CVarArg, req as CVarArg)
 
     return dataTaskWithRequest(req, cb: cb)
   }

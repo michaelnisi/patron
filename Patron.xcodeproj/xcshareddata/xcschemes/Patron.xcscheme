@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1140"
+   LastUpgradeVersion = "1200"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -64,15 +64,6 @@
             </ActionContent>
          </ExecutionAction>
       </PostActions>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4CCC8C421C03793300120D07"
-            BuildableName = "Patron.framework"
-            BlueprintName = "Patron"
-            ReferencedContainer = "container:Patron.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <EnvironmentVariables>
          <EnvironmentVariable
             key = ""
