@@ -1,0 +1,636 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "PatronError"
+- "JSONService"
+- "Patron"
+provides-nominal:
+- "6Patron0A5ErrorO"
+- "6Patron11JSONServiceP"
+- "6PatronAAC"
+provides-member:
+- ["6Patron0A5ErrorO", ""]
+- ["6Patron11JSONServiceP", ""]
+- ["6PatronAAC", ""]
+- ["6PatronAAC", "get"]
+- ["6PatronAAC", "get"]
+provides-dynamic-lookup:
+- "_status"
+- "baseURL"
+- "dataTaskWithRequest"
+- "get"
+- "host"
+- "log"
+- "post"
+- "sQueue"
+- "session"
+- "status"
+depends-top-level:
+- "=="
+- "AnyObject"
+- !private "Array"
+- "AssignmentPrecedence"
+- "Bool"
+- !private "BooleanLiteralType"
+- "CVarArg"
+- "CastingPrecedence"
+- !private "Date"
+- "DispatchQueue"
+- "Error"
+- "FloatLiteralType"
+- "Int"
+- "IntegerLiteralType"
+- "JSONSerialization"
+- "JSONService"
+- !private "NSMutableURLRequest"
+- "OSLog"
+- "Patron"
+- "PatronError"
+- "String"
+- "StringLiteralType"
+- "TimeInterval"
+- "URL"
+- !private "URLComponents"
+- "URLQueryItem"
+- "URLRequest"
+- "URLResponse"
+- "URLSession"
+- "URLSessionTask"
+- "UUID"
+- "Void"
+- "_status"
+- !private "baseURL"
+- !private "dataTaskWithRequest"
+- "done"
+- !private "log"
+- !private "os_log"
+- !private "sQueue"
+- !private "session"
+depends-member:
+- !private ["SK", ""]
+- !private ["SK", "init"]
+- !private ["s7CVarArgP", "data"]
+- !private ["s7CVarArgP", "dataTask"]
+- !private ["s7CVarArgP", "disabled"]
+- ["s7CVarArgP", "global"]
+- !private ["s7CVarArgP", "httpBody"]
+- !private ["s7CVarArgP", "httpMethod"]
+- ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "invalidateAndCancel"]
+- !private ["s7CVarArgP", "isValidJSONObject"]
+- !private ["s7CVarArgP", "jsonObject"]
+- !private ["s7CVarArgP", "resume"]
+- !private ["s7CVarArgP", "sync"]
+- !private ["Sl", ""]
+- !private ["Sl", "init"]
+- !private ["SL", ""]
+- !private ["SL", "init"]
+- !private ["SL", "timeIntervalSince1970"]
+- ["s28CustomDebugStringConvertibleP", "CachePolicy"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "allowsCellularAccess"]
+- !private ["s28CustomDebugStringConvertibleP", "cachePolicy"]
+- !private ["s28CustomDebugStringConvertibleP", "data"]
+- !private ["s28CustomDebugStringConvertibleP", "dataTask"]
+- !private ["s28CustomDebugStringConvertibleP", "disabled"]
+- ["s28CustomDebugStringConvertibleP", "global"]
+- !private ["s28CustomDebugStringConvertibleP", "host"]
+- !private ["s28CustomDebugStringConvertibleP", "httpBody"]
+- !private ["s28CustomDebugStringConvertibleP", "httpMethod"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "invalidateAndCancel"]
+- !private ["s28CustomDebugStringConvertibleP", "isValidJSONObject"]
+- !private ["s28CustomDebugStringConvertibleP", "jsonObject"]
+- !private ["s28CustomDebugStringConvertibleP", "queryItems"]
+- !private ["s28CustomDebugStringConvertibleP", "resume"]
+- !private ["s28CustomDebugStringConvertibleP", "sync"]
+- !private ["s28CustomDebugStringConvertibleP", "timeIntervalSince1970"]
+- !private ["s28CustomDebugStringConvertibleP", "url"]
+- ["s28CustomDebugStringConvertibleP", "uuidString"]
+- ["s17CustomReflectableP", "CachePolicy"]
+- !private ["s17CustomReflectableP", "allowsCellularAccess"]
+- !private ["s17CustomReflectableP", "cachePolicy"]
+- ["s17CustomReflectableP", "global"]
+- ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "queryItems"]
+- !private ["s17CustomReflectableP", "timeIntervalSince1970"]
+- !private ["s17CustomReflectableP", "url"]
+- ["s17CustomReflectableP", "uuidString"]
+- ["s23CustomStringConvertibleP", "CachePolicy"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "allowsCellularAccess"]
+- ["s23CustomStringConvertibleP", "appendInterpolation"]
+- ["s23CustomStringConvertibleP", "appendLiteral"]
+- !private ["s23CustomStringConvertibleP", "cachePolicy"]
+- !private ["s23CustomStringConvertibleP", "data"]
+- !private ["s23CustomStringConvertibleP", "dataTask"]
+- !private ["s23CustomStringConvertibleP", "disabled"]
+- ["s23CustomStringConvertibleP", "global"]
+- !private ["s23CustomStringConvertibleP", "host"]
+- !private ["s23CustomStringConvertibleP", "httpBody"]
+- !private ["s23CustomStringConvertibleP", "httpMethod"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "invalidateAndCancel"]
+- !private ["s23CustomStringConvertibleP", "isValidJSONObject"]
+- !private ["s23CustomStringConvertibleP", "jsonObject"]
+- !private ["s23CustomStringConvertibleP", "queryItems"]
+- !private ["s23CustomStringConvertibleP", "resume"]
+- !private ["s23CustomStringConvertibleP", "sync"]
+- !private ["s23CustomStringConvertibleP", "timeIntervalSince1970"]
+- !private ["s23CustomStringConvertibleP", "url"]
+- !private ["s23CustomStringConvertibleP", "utf8"]
+- ["s23CustomStringConvertibleP", "uuidString"]
+- !private ["10Foundation4DateV", "init"]
+- !private ["10Foundation4DateV", "timeIntervalSince1970"]
+- ["Se", "global"]
+- !private ["Se", "host"]
+- ["Se", "init"]
+- !private ["Se", "queryItems"]
+- !private ["Se", "timeIntervalSince1970"]
+- !private ["Se", "url"]
+- ["Se", "uuidString"]
+- ["s26DefaultStringInterpolationV", "appendInterpolation"]
+- ["s26DefaultStringInterpolationV", "appendLiteral"]
+- ["So18OS_dispatch_objectC", ""]
+- ["So18OS_dispatch_objectC", "global"]
+- ["So18OS_dispatch_objectC", "init"]
+- ["So18OS_dispatch_objectC", "sync"]
+- ["So17OS_dispatch_queueC", "global"]
+- ["So17OS_dispatch_queueC", "init"]
+- !private ["So17OS_dispatch_queueC", "sync"]
+- ["SE", "global"]
+- !private ["SE", "host"]
+- ["SE", "init"]
+- !private ["SE", "queryItems"]
+- !private ["SE", "timeIntervalSince1970"]
+- !private ["SE", "url"]
+- ["SE", "uuidString"]
+- !private ["SS10FoundationE8EncodingV", "utf8"]
+- !private ["SQ", "ArrayLiteralElement"]
+- ["SQ", "CachePolicy"]
+- !private ["SQ", "Element"]
+- ["SQ", ""]
+- !private ["SQ", "allowsCellularAccess"]
+- !private ["SQ", "cachePolicy"]
+- !private ["SQ", "data"]
+- !private ["SQ", "dataTask"]
+- !private ["SQ", "disabled"]
+- ["SQ", "global"]
+- !private ["SQ", "host"]
+- !private ["SQ", "httpBody"]
+- !private ["SQ", "httpMethod"]
+- !private ["SQ", "info"]
+- ["SQ", "init"]
+- !private ["SQ", "invalidateAndCancel"]
+- !private ["SQ", "isValidJSONObject"]
+- !private ["SQ", "jsonObject"]
+- !private ["SQ", "prettyPrinted"]
+- !private ["SQ", "queryItems"]
+- !private ["SQ", "resume"]
+- !private ["SQ", "sync"]
+- !private ["SQ", "timeIntervalSince1970"]
+- !private ["SQ", "url"]
+- ["SQ", "userInitiated"]
+- !private ["SQ", "utf8"]
+- ["SQ", "uuidString"]
+- ["s5ErrorP", ""]
+- ["s5ErrorP", "_code"]
+- ["s5ErrorP", "_domain"]
+- ["s5ErrorP", "_getEmbeddedNSError"]
+- ["s5ErrorP", "_userInfo"]
+- ["s5ErrorP", "code"]
+- ["s5ErrorP", "domain"]
+- !private ["s5ErrorP", "invalidJSON"]
+- !private ["s5ErrorP", "invalidURL"]
+- ["s5ErrorP", "userInfo"]
+- !private ["s25ExpressibleByArrayLiteralP", "ArrayLiteralElement"]
+- !private ["s25ExpressibleByArrayLiteralP", "Element"]
+- !private ["s25ExpressibleByArrayLiteralP", ""]
+- !private ["s25ExpressibleByArrayLiteralP", "init"]
+- !private ["s25ExpressibleByArrayLiteralP", "prettyPrinted"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", ""]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- ["s23ExpressibleByNilLiteralP", "global"]
+- !private ["s23ExpressibleByNilLiteralP", "init"]
+- ["s32ExpressibleByStringInterpolationP", "StringInterpolation"]
+- !private ["s32ExpressibleByStringInterpolationP", ""]
+- ["s32ExpressibleByStringInterpolationP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", ""]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", ""]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- ["SH", "CachePolicy"]
+- ["SH", ""]
+- !private ["SH", "allowsCellularAccess"]
+- !private ["SH", "cachePolicy"]
+- !private ["SH", "data"]
+- !private ["SH", "dataTask"]
+- !private ["SH", "disabled"]
+- ["SH", "global"]
+- !private ["SH", "host"]
+- !private ["SH", "httpBody"]
+- !private ["SH", "httpMethod"]
+- ["SH", "init"]
+- !private ["SH", "invalidateAndCancel"]
+- !private ["SH", "isValidJSONObject"]
+- !private ["SH", "jsonObject"]
+- !private ["SH", "queryItems"]
+- !private ["SH", "resume"]
+- !private ["SH", "sync"]
+- !private ["SH", "timeIntervalSince1970"]
+- !private ["SH", "url"]
+- ["SH", "userInitiated"]
+- !private ["SH", "utf8"]
+- ["SH", "uuidString"]
+- !private ["So19NSJSONSerializationC", "data"]
+- !private ["So19NSJSONSerializationC", "isValidJSONObject"]
+- !private ["So19NSJSONSerializationC", "jsonObject"]
+- ["6Patron11JSONServiceP", "AnyObject"]
+- ["6Patron11JSONServiceP", "Bool"]
+- !private ["6Patron11JSONServiceP", "Date"]
+- ["6Patron11JSONServiceP", "DispatchQueue"]
+- ["6Patron11JSONServiceP", "Error"]
+- ["6Patron11JSONServiceP", "Int"]
+- !private ["6Patron11JSONServiceP", "JSONSerialization"]
+- !private ["6Patron11JSONServiceP", "NSMutableURLRequest"]
+- !private ["6Patron11JSONServiceP", "PatronError"]
+- ["6Patron11JSONServiceP", "String"]
+- ["6Patron11JSONServiceP", "TimeInterval"]
+- !private ["6Patron11JSONServiceP", "URL"]
+- !private ["6Patron11JSONServiceP", "URLComponents"]
+- ["6Patron11JSONServiceP", "URLQueryItem"]
+- ["6Patron11JSONServiceP", "URLRequest"]
+- ["6Patron11JSONServiceP", "URLResponse"]
+- ["6Patron11JSONServiceP", "URLSessionTask"]
+- ["6Patron11JSONServiceP", "UUID"]
+- ["6Patron11JSONServiceP", "Void"]
+- ["6Patron11JSONServiceP", ""]
+- !private ["6Patron11JSONServiceP", "_status"]
+- !private ["6Patron11JSONServiceP", "baseURL"]
+- !private ["6Patron11JSONServiceP", "dataTaskWithRequest"]
+- !private ["6Patron11JSONServiceP", "done"]
+- ["6Patron11JSONServiceP", "get"]
+- ["6Patron11JSONServiceP", "host"]
+- !private ["6Patron11JSONServiceP", "log"]
+- !private ["6Patron11JSONServiceP", "os_log"]
+- ["6Patron11JSONServiceP", "post"]
+- !private ["6Patron11JSONServiceP", "sQueue"]
+- !private ["6Patron11JSONServiceP", "session"]
+- ["6Patron11JSONServiceP", "status"]
+- !private ["s25LosslessStringConvertibleP", ""]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s10MirrorPathP", "init"]
+- ["So8NSCodingP", ""]
+- !private ["So8NSCodingP", "httpBody"]
+- !private ["So8NSCodingP", "httpMethod"]
+- !private ["So8NSCodingP", "init"]
+- !private ["So9NSCopyingP", ""]
+- !private ["So9NSCopyingP", "httpBody"]
+- !private ["So9NSCopyingP", "httpMethod"]
+- !private ["So9NSCopyingP", "init"]
+- !private ["So9NSCopyingP", "resume"]
+- !private ["So16NSMutableCopyingP", ""]
+- !private ["So16NSMutableCopyingP", "httpBody"]
+- !private ["So16NSMutableCopyingP", "httpMethod"]
+- !private ["So16NSMutableCopyingP", "init"]
+- !private ["So19NSMutableURLRequestC", "httpBody"]
+- !private ["So19NSMutableURLRequestC", "httpMethod"]
+- !private ["So19NSMutableURLRequestC", "init"]
+- !private ["So8NSObjectC", "JSONObjectWithData"]
+- !private ["So8NSObjectC", "JSONObjectWithStream"]
+- ["So8NSObjectC", ""]
+- ["So8NSObjectC", "activate"]
+- !private ["So8NSObjectC", "data"]
+- !private ["So8NSObjectC", "dataTask"]
+- !private ["So8NSObjectC", "dataTaskWithRequest"]
+- !private ["So8NSObjectC", "dataTaskWithURL"]
+- !private ["So8NSObjectC", "dataWithJSONObject"]
+- !private ["So8NSObjectC", "disabled"]
+- ["So8NSObjectC", "global"]
+- !private ["So8NSObjectC", "httpBody"]
+- !private ["So8NSObjectC", "httpMethod"]
+- ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "invalidateAndCancel"]
+- !private ["So8NSObjectC", "isEnabled"]
+- !private ["So8NSObjectC", "isValidJSONObject"]
+- !private ["So8NSObjectC", "jsonObject"]
+- !private ["So8NSObjectC", "requestWithURL"]
+- ["So8NSObjectC", "resume"]
+- ["So8NSObjectC", "setTarget"]
+- ["So8NSObjectC", "suspend"]
+- ["So8NSObjectC", "sync"]
+- !private ["So8NSObjectP", "JSONObjectWithData"]
+- !private ["So8NSObjectP", "JSONObjectWithStream"]
+- ["So8NSObjectP", ""]
+- ["So8NSObjectP", "activate"]
+- !private ["So8NSObjectP", "data"]
+- !private ["So8NSObjectP", "dataTask"]
+- !private ["So8NSObjectP", "dataTaskWithRequest"]
+- !private ["So8NSObjectP", "dataTaskWithURL"]
+- !private ["So8NSObjectP", "dataWithJSONObject"]
+- !private ["So8NSObjectP", "disabled"]
+- ["So8NSObjectP", "global"]
+- !private ["So8NSObjectP", "httpBody"]
+- !private ["So8NSObjectP", "httpMethod"]
+- ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "invalidateAndCancel"]
+- !private ["So8NSObjectP", "isEnabled"]
+- !private ["So8NSObjectP", "isValidJSONObject"]
+- !private ["So8NSObjectP", "jsonObject"]
+- !private ["So8NSObjectP", "requestWithURL"]
+- ["So8NSObjectP", "resume"]
+- ["So8NSObjectP", "setTarget"]
+- ["So8NSObjectP", "suspend"]
+- ["So8NSObjectP", "sync"]
+- !private ["So14NSSecureCodingP", ""]
+- !private ["So14NSSecureCodingP", "httpBody"]
+- !private ["So14NSSecureCodingP", "httpMethod"]
+- !private ["So14NSSecureCodingP", "init"]
+- ["So12NSURLRequestC", ""]
+- !private ["So12NSURLRequestC", "httpBody"]
+- !private ["So12NSURLRequestC", "httpMethod"]
+- !private ["So12NSURLRequestC", "init"]
+- !private ["So9OS_os_logC", "disabled"]
+- !private ["So13os_log_type_ta", "info"]
+- ["So9OS_objectC", ""]
+- ["So9OS_objectC", "activate"]
+- ["So9OS_objectC", "global"]
+- ["So9OS_objectC", "init"]
+- ["So9OS_objectC", "resume"]
+- ["So9OS_objectC", "setTarget"]
+- ["So9OS_objectC", "suspend"]
+- ["So9OS_objectC", "sync"]
+- !private ["s9OptionSetP", "ArrayLiteralElement"]
+- !private ["s9OptionSetP", "Element"]
+- !private ["s9OptionSetP", "init"]
+- !private ["s9OptionSetP", "prettyPrinted"]
+- ["Sq", "global"]
+- ["6PatronAAC", "AnyObject"]
+- ["6PatronAAC", "Bool"]
+- !private ["6PatronAAC", "CVarArg"]
+- !private ["6PatronAAC", "Date"]
+- ["6PatronAAC", "DispatchQueue"]
+- ["6PatronAAC", "Error"]
+- ["6PatronAAC", "Int"]
+- !private ["6PatronAAC", "JSONSerialization"]
+- !private ["6PatronAAC", "NSMutableURLRequest"]
+- ["6PatronAAC", "OSLog"]
+- !private ["6PatronAAC", "PatronError"]
+- ["6PatronAAC", "String"]
+- ["6PatronAAC", "TimeInterval"]
+- ["6PatronAAC", "URL"]
+- !private ["6PatronAAC", "URLComponents"]
+- ["6PatronAAC", "URLQueryItem"]
+- ["6PatronAAC", "URLRequest"]
+- ["6PatronAAC", "URLResponse"]
+- ["6PatronAAC", "URLSession"]
+- ["6PatronAAC", "URLSessionTask"]
+- ["6PatronAAC", "UUID"]
+- ["6PatronAAC", "Void"]
+- ["6PatronAAC", ""]
+- !private ["6PatronAAC", "_status"]
+- !private ["6PatronAAC", "baseURL"]
+- !private ["6PatronAAC", "dataTaskWithRequest"]
+- ["6PatronAAC", "deinit"]
+- !private ["6PatronAAC", "done"]
+- ["6PatronAAC", "get"]
+- ["6PatronAAC", "host"]
+- ["6PatronAAC", "init"]
+- !private ["6PatronAAC", "log"]
+- !private ["6PatronAAC", "os_log"]
+- ["6PatronAAC", "post"]
+- !private ["6PatronAAC", "sQueue"]
+- !private ["6PatronAAC", "session"]
+- ["6PatronAAC", "status"]
+- ["6Patron0A5ErrorO", "String"]
+- ["6Patron0A5ErrorO", "URLQueryItem"]
+- ["6Patron0A5ErrorO", ""]
+- ["6Patron0A5ErrorO", "_code"]
+- ["6Patron0A5ErrorO", "_domain"]
+- ["6Patron0A5ErrorO", "_getEmbeddedNSError"]
+- ["6Patron0A5ErrorO", "_userInfo"]
+- ["6Patron0A5ErrorO", "code"]
+- ["6Patron0A5ErrorO", "domain"]
+- ["6Patron0A5ErrorO", "invalidJSON"]
+- ["6Patron0A5ErrorO", "invalidURL"]
+- ["6Patron0A5ErrorO", "userInfo"]
+- !private ["So19NSProgressReportingP", "resume"]
+- ["8Dispatch0A3QoSV0B6SClassO", "userInitiated"]
+- !private ["Sm", "init"]
+- !private ["SY", "ArrayLiteralElement"]
+- !private ["SY", "Element"]
+- !private ["SY", ""]
+- !private ["SY", "info"]
+- !private ["SY", "init"]
+- !private ["SY", "prettyPrinted"]
+- !private ["SY", "utf8"]
+- !private ["So20NSJSONReadingOptionsV", "ArrayLiteralElement"]
+- !private ["So20NSJSONReadingOptionsV", "Element"]
+- !private ["So20NSJSONReadingOptionsV", "init"]
+- ["10Foundation20ReferenceConvertibleP", "CachePolicy"]
+- !private ["10Foundation20ReferenceConvertibleP", "allowsCellularAccess"]
+- !private ["10Foundation20ReferenceConvertibleP", "cachePolicy"]
+- !private ["10Foundation20ReferenceConvertibleP", "host"]
+- ["10Foundation20ReferenceConvertibleP", "init"]
+- !private ["10Foundation20ReferenceConvertibleP", "queryItems"]
+- !private ["10Foundation20ReferenceConvertibleP", "timeIntervalSince1970"]
+- !private ["10Foundation20ReferenceConvertibleP", "url"]
+- ["10Foundation20ReferenceConvertibleP", "uuidString"]
+- ["7Combine9SchedulerP", "global"]
+- ["7Combine9SchedulerP", "init"]
+- !private ["7Combine9SchedulerP", "sync"]
+- !private ["ST", ""]
+- !private ["ST", "init"]
+- !private ["s10SetAlgebraP", "ArrayLiteralElement"]
+- !private ["s10SetAlgebraP", "Element"]
+- !private ["s10SetAlgebraP", ""]
+- !private ["s10SetAlgebraP", "init"]
+- !private ["s10SetAlgebraP", "prettyPrinted"]
+- !private ["SS", "init"]
+- ["s27StringInterpolationProtocolP", "appendInterpolation"]
+- ["s27StringInterpolationProtocolP", "appendLiteral"]
+- ["s27StringInterpolationProtocolP", "init"]
+- !private ["Sy", "init"]
+- !private ["s16TextOutputStreamP", ""]
+- ["s16TextOutputStreamP", "appendInterpolation"]
+- ["s16TextOutputStreamP", "appendLiteral"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", ""]
+- !private ["s20TextOutputStreamableP", "init"]
+- !private ["10Foundation3URLV", "host"]
+- !private ["10Foundation3URLV", "init"]
+- !private ["10Foundation13URLComponentsV", "init"]
+- !private ["10Foundation13URLComponentsV", "queryItems"]
+- !private ["10Foundation13URLComponentsV", "url"]
+- ["10Foundation10URLRequestV", "CachePolicy"]
+- !private ["10Foundation10URLRequestV", "allowsCellularAccess"]
+- !private ["10Foundation10URLRequestV", "cachePolicy"]
+- !private ["10Foundation10URLRequestV", "init"]
+- !private ["So12NSURLSessionC", "dataTask"]
+- !private ["So12NSURLSessionC", "invalidateAndCancel"]
+- !private ["So20NSURLSessionDataTaskC", "resume"]
+- ["So16NSURLSessionTaskC", ""]
+- !private ["So16NSURLSessionTaskC", "resume"]
+- ["10Foundation4UUIDV", "init"]
+- ["10Foundation4UUIDV", "uuidString"]
+- !private ["So20NSJSONWritingOptionsV", "prettyPrinted"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "host"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "init"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "timeIntervalSince1970"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "init"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", ""]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", ""]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s34_ExpressibleByFileReferenceLiteralP", "host"]
+- !private ["s34_ExpressibleByFileReferenceLiteralP", "init"]
+- !private ["s19_HasContiguousBytesP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "httpBody"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "httpMethod"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "data"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "dataTask"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "disabled"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "global"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "httpBody"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "httpMethod"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "invalidateAndCancel"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "isValidJSONObject"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "jsonObject"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "resume"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "sync"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "data"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "dataTask"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "disabled"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "global"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "httpBody"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "httpMethod"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "init"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "invalidateAndCancel"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "isValidJSONObject"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "jsonObject"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "resume"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "sync"]
+- ["s21_ObjectiveCBridgeableP", "CachePolicy"]
+- ["s21_ObjectiveCBridgeableP", ""]
+- !private ["s21_ObjectiveCBridgeableP", "_ObjectiveCType"]
+- !private ["s21_ObjectiveCBridgeableP", "_bridgeToObjectiveC"]
+- !private ["s21_ObjectiveCBridgeableP", "_conditionallyBridgeFromObjectiveC"]
+- !private ["s21_ObjectiveCBridgeableP", "_forceBridgeFromObjectiveC"]
+- !private ["s21_ObjectiveCBridgeableP", "_unconditionallyBridgeFromObjectiveC"]
+- !private ["s21_ObjectiveCBridgeableP", "allowsCellularAccess"]
+- !private ["s21_ObjectiveCBridgeableP", "cachePolicy"]
+- ["s21_ObjectiveCBridgeableP", "global"]
+- !private ["s21_ObjectiveCBridgeableP", "host"]
+- ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "queryItems"]
+- !private ["s21_ObjectiveCBridgeableP", "timeIntervalSince1970"]
+- !private ["s21_ObjectiveCBridgeableP", "url"]
+- ["s21_ObjectiveCBridgeableP", "uuidString"]
+depends-nominal:
+- !private "SK"
+- "s7CVarArgP"
+- !private "Sl"
+- !private "SL"
+- "s28CustomDebugStringConvertibleP"
+- "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "10Foundation4DateV"
+- "Se"
+- "s26DefaultStringInterpolationV"
+- "So18OS_dispatch_objectC"
+- "So17OS_dispatch_queueC"
+- "SE"
+- !private "SS10FoundationE8EncodingV"
+- "SQ"
+- "s5ErrorP"
+- !private "s25ExpressibleByArrayLiteralP"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- "s23ExpressibleByNilLiteralP"
+- "s32ExpressibleByStringInterpolationP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- "SH"
+- !private "So19NSJSONSerializationC"
+- "6Patron11JSONServiceP"
+- !private "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
+- "So8NSCodingP"
+- !private "So9NSCopyingP"
+- !private "So16NSMutableCopyingP"
+- !private "So19NSMutableURLRequestC"
+- "So8NSObjectC"
+- "So8NSObjectP"
+- !private "So14NSSecureCodingP"
+- "So12NSURLRequestC"
+- !private "So9OS_os_logC"
+- !private "So13os_log_type_ta"
+- "So9OS_objectC"
+- !private "s9OptionSetP"
+- "Sq"
+- "6PatronAAC"
+- "6Patron0A5ErrorO"
+- !private "So19NSProgressReportingP"
+- "8Dispatch0A3QoSV0B6SClassO"
+- !private "Sm"
+- !private "SY"
+- !private "So20NSJSONReadingOptionsV"
+- "10Foundation20ReferenceConvertibleP"
+- "7Combine9SchedulerP"
+- !private "ST"
+- !private "s10SetAlgebraP"
+- !private "SS"
+- "s27StringInterpolationProtocolP"
+- !private "Sy"
+- "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- !private "10Foundation3URLV"
+- !private "10Foundation13URLComponentsV"
+- "10Foundation10URLRequestV"
+- !private "So12NSURLSessionC"
+- !private "So20NSURLSessionDataTaskC"
+- "So16NSURLSessionTaskC"
+- "10Foundation4UUIDV"
+- !private "So20NSJSONWritingOptionsV"
+- !private "s30_CustomPlaygroundQuickLookableP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- "s35_ExpressibleByBuiltinIntegerLiteralP"
+- "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s34_ExpressibleByFileReferenceLiteralP"
+- !private "s19_HasContiguousBytesP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- "10Foundation37_KeyValueCodingAndObservingPublishingP"
+- "s21_ObjectiveCBridgeableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/XPC.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/ObjectiveC.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Combine.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Dispatch.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Darwin.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Foundation.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreFoundation.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreGraphics.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/os.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Swift.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/IOKit.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/SwiftOnoneSupport.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/mach-o/dyld.modulemap"
+- "/Users/michael/swift/patron/.build/x86_64-apple-macosx/debug/Patron.build/module.modulemap"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/mach-o/compact_unwind_encoding.modulemap"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/xpc/XPC.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/ApplicationServices.framework/Headers/ApplicationServices.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/os.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "7a6440dcc9f19f5768543cd4b7f0bd21"

@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/michael/swift/patron/.build/x86_64-apple-macosx/debug/Patron.build/master.swiftdeps"
+  },
+  "/Users/michael/swift/patron/Sources/Patron/Patron.swift": {
+    "dependencies": "/Users/michael/swift/patron/.build/x86_64-apple-macosx/debug/Patron.build/Patron.d",
+    "object": "/Users/michael/swift/patron/.build/x86_64-apple-macosx/debug/Patron.build/Patron.swift.o",
+    "swiftmodule": "/Users/michael/swift/patron/.build/x86_64-apple-macosx/debug/Patron.build/Patron~partial.swiftmodule",
+    "swift-dependencies": "/Users/michael/swift/patron/.build/x86_64-apple-macosx/debug/Patron.build/Patron.swiftdeps"
+  }
+}

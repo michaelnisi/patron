@@ -1,0 +1,19 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "\/Users\/michael\/swift\/patron\/.build\/x86_64-apple-macosx\/debug\/PatronPackageTests.xctest\/Contents\/MacOS\/PatronPackageTests",
+      "packageName" : "Patron",
+      "productName" : "PatronPackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "swiftTargetMap" : {
+    "C.Patron-debug.module" : "Patron",
+    "C.PatronTests-debug.module" : "PatronTests"
+  },
+  "testDiscoveryCommands" : {
+
+  }
+}

@@ -1,0 +1,854 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "PatronTests"
+provides-nominal:
+- "11PatronTestsAAC"
+provides-member:
+- ["11PatronTestsAAC", ""]
+provides-dynamic-lookup:
+- "freshService"
+- "freshSession"
+- "setUp"
+- "svc"
+- "tearDown"
+- "testCancelled"
+- "testDeinit"
+- "testGet"
+- "testGetArrayOfDictionaries"
+- "testGetInvalidJSON"
+- "testGetWithQuery"
+- "testHost"
+- "testNotFound"
+- "testPost"
+- "testPostInvalidJSON"
+- "testWrongPort"
+depends-top-level:
+- "AnyObject"
+- !private "Array"
+- "AssignmentPrecedence"
+- !private "BooleanLiteralType"
+- "CastingPrecedence"
+- !private "Dictionary"
+- !private "FloatLiteralType"
+- "Int"
+- !private "IntegerLiteralType"
+- "JSONService"
+- "Patron"
+- "PatronError"
+- "PatronTests"
+- "String"
+- !private "StringLiteralType"
+- !private "URL"
+- !private "URLQueryItem"
+- "URLSession"
+- !private "URLSessionConfiguration"
+- !private "UnicodeScalarType"
+- "XCTAssertEqual"
+- "XCTAssertNil"
+- "XCTAssertNotNil"
+- "XCTFail"
+- "XCTestCase"
+- !private "expectation"
+- !private "freshService"
+- !private "freshSession"
+- !private "svc"
+depends-member:
+- !private ["Sa", "map"]
+- !private ["SK", ""]
+- !private ["SK", "init"]
+- !private ["SK", "map"]
+- !private ["8CloudKit21CKRecordValueProtocolP", "init"]
+- !private ["8CloudKit21CKRecordValueProtocolP", "map"]
+- !private ["s7CVarArgP", "Patron"]
+- !private ["s7CVarArgP", "String"]
+- !private ["s7CVarArgP", "URL"]
+- !private ["s7CVarArgP", "URLQueryItem"]
+- !private ["s7CVarArgP", "URLSession"]
+- !private ["s7CVarArgP", "URLSessionConfiguration"]
+- !private ["s7CVarArgP", "XCTAssertEqual"]
+- !private ["s7CVarArgP", "XCTAssertNil"]
+- !private ["s7CVarArgP", "XCTAssertNotNil"]
+- !private ["s7CVarArgP", "XCTFail"]
+- ["s7CVarArgP", ""]
+- !private ["s7CVarArgP", "cancel"]
+- !private ["s7CVarArgP", "default"]
+- !private ["s7CVarArgP", "expectation"]
+- !private ["s7CVarArgP", "freshService"]
+- !private ["s7CVarArgP", "freshSession"]
+- !private ["s7CVarArgP", "fulfill"]
+- !private ["s7CVarArgP", "httpShouldUsePipelining"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "map"]
+- !private ["s7CVarArgP", "requestCachePolicy"]
+- !private ["s7CVarArgP", "setUp"]
+- !private ["s7CVarArgP", "subscript"]
+- !private ["s7CVarArgP", "svc"]
+- !private ["s7CVarArgP", "tearDown"]
+- !private ["s7CVarArgP", "testCancelled"]
+- !private ["s7CVarArgP", "testDeinit"]
+- !private ["s7CVarArgP", "testGet"]
+- !private ["s7CVarArgP", "testGetArrayOfDictionaries"]
+- !private ["s7CVarArgP", "testGetInvalidJSON"]
+- !private ["s7CVarArgP", "testGetWithQuery"]
+- !private ["s7CVarArgP", "testHost"]
+- !private ["s7CVarArgP", "testNotFound"]
+- !private ["s7CVarArgP", "testPost"]
+- !private ["s7CVarArgP", "testPostInvalidJSON"]
+- !private ["s7CVarArgP", "testWrongPort"]
+- !private ["s7CVarArgP", "waitForExpectations"]
+- !private ["So23NSURLRequestCachePolicyV", "reloadIgnoringLocalCacheData"]
+- !private ["Sl", ""]
+- !private ["Sl", "init"]
+- !private ["Sl", "map"]
+- !private ["Sl", "subscript"]
+- !private ["SL", ""]
+- !private ["SL", "init"]
+- !private ["10Foundation15ContiguousBytesP", "map"]
+- !private ["s28CustomDebugStringConvertibleP", "Patron"]
+- !private ["s28CustomDebugStringConvertibleP", "String"]
+- !private ["s28CustomDebugStringConvertibleP", "URL"]
+- !private ["s28CustomDebugStringConvertibleP", "URLQueryItem"]
+- !private ["s28CustomDebugStringConvertibleP", "URLSession"]
+- !private ["s28CustomDebugStringConvertibleP", "URLSessionConfiguration"]
+- !private ["s28CustomDebugStringConvertibleP", "XCTAssertEqual"]
+- !private ["s28CustomDebugStringConvertibleP", "XCTAssertNil"]
+- !private ["s28CustomDebugStringConvertibleP", "XCTAssertNotNil"]
+- !private ["s28CustomDebugStringConvertibleP", "XCTFail"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "cancel"]
+- !private ["s28CustomDebugStringConvertibleP", "default"]
+- !private ["s28CustomDebugStringConvertibleP", "expectation"]
+- !private ["s28CustomDebugStringConvertibleP", "freshService"]
+- !private ["s28CustomDebugStringConvertibleP", "freshSession"]
+- !private ["s28CustomDebugStringConvertibleP", "fulfill"]
+- !private ["s28CustomDebugStringConvertibleP", "get"]
+- !private ["s28CustomDebugStringConvertibleP", "host"]
+- !private ["s28CustomDebugStringConvertibleP", "httpShouldUsePipelining"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "map"]
+- !private ["s28CustomDebugStringConvertibleP", "post"]
+- !private ["s28CustomDebugStringConvertibleP", "requestCachePolicy"]
+- !private ["s28CustomDebugStringConvertibleP", "setUp"]
+- !private ["s28CustomDebugStringConvertibleP", "subscript"]
+- !private ["s28CustomDebugStringConvertibleP", "svc"]
+- !private ["s28CustomDebugStringConvertibleP", "tearDown"]
+- !private ["s28CustomDebugStringConvertibleP", "testCancelled"]
+- !private ["s28CustomDebugStringConvertibleP", "testDeinit"]
+- !private ["s28CustomDebugStringConvertibleP", "testGet"]
+- !private ["s28CustomDebugStringConvertibleP", "testGetArrayOfDictionaries"]
+- !private ["s28CustomDebugStringConvertibleP", "testGetInvalidJSON"]
+- !private ["s28CustomDebugStringConvertibleP", "testGetWithQuery"]
+- !private ["s28CustomDebugStringConvertibleP", "testHost"]
+- !private ["s28CustomDebugStringConvertibleP", "testNotFound"]
+- !private ["s28CustomDebugStringConvertibleP", "testPost"]
+- !private ["s28CustomDebugStringConvertibleP", "testPostInvalidJSON"]
+- !private ["s28CustomDebugStringConvertibleP", "testWrongPort"]
+- !private ["s28CustomDebugStringConvertibleP", "waitForExpectations"]
+- !private ["s17CustomReflectableP", "get"]
+- !private ["s17CustomReflectableP", "host"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "map"]
+- !private ["s17CustomReflectableP", "post"]
+- !private ["s17CustomReflectableP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "Patron"]
+- !private ["s23CustomStringConvertibleP", "String"]
+- !private ["s23CustomStringConvertibleP", "URL"]
+- !private ["s23CustomStringConvertibleP", "URLQueryItem"]
+- !private ["s23CustomStringConvertibleP", "URLSession"]
+- !private ["s23CustomStringConvertibleP", "URLSessionConfiguration"]
+- !private ["s23CustomStringConvertibleP", "XCTAssertEqual"]
+- !private ["s23CustomStringConvertibleP", "XCTAssertNil"]
+- !private ["s23CustomStringConvertibleP", "XCTAssertNotNil"]
+- !private ["s23CustomStringConvertibleP", "XCTFail"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "appendInterpolation"]
+- !private ["s23CustomStringConvertibleP", "appendLiteral"]
+- !private ["s23CustomStringConvertibleP", "cancel"]
+- !private ["s23CustomStringConvertibleP", "default"]
+- !private ["s23CustomStringConvertibleP", "expectation"]
+- !private ["s23CustomStringConvertibleP", "freshService"]
+- !private ["s23CustomStringConvertibleP", "freshSession"]
+- !private ["s23CustomStringConvertibleP", "fulfill"]
+- !private ["s23CustomStringConvertibleP", "httpShouldUsePipelining"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "map"]
+- !private ["s23CustomStringConvertibleP", "requestCachePolicy"]
+- !private ["s23CustomStringConvertibleP", "setUp"]
+- !private ["s23CustomStringConvertibleP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "svc"]
+- !private ["s23CustomStringConvertibleP", "tearDown"]
+- !private ["s23CustomStringConvertibleP", "testCancelled"]
+- !private ["s23CustomStringConvertibleP", "testDeinit"]
+- !private ["s23CustomStringConvertibleP", "testGet"]
+- !private ["s23CustomStringConvertibleP", "testGetArrayOfDictionaries"]
+- !private ["s23CustomStringConvertibleP", "testGetInvalidJSON"]
+- !private ["s23CustomStringConvertibleP", "testGetWithQuery"]
+- !private ["s23CustomStringConvertibleP", "testHost"]
+- !private ["s23CustomStringConvertibleP", "testNotFound"]
+- !private ["s23CustomStringConvertibleP", "testPost"]
+- !private ["s23CustomStringConvertibleP", "testPostInvalidJSON"]
+- !private ["s23CustomStringConvertibleP", "testWrongPort"]
+- !private ["s23CustomStringConvertibleP", "waitForExpectations"]
+- !private ["10Foundation12DataProtocolP", ""]
+- !private ["10Foundation12DataProtocolP", "map"]
+- !private ["Se", "get"]
+- !private ["Se", "host"]
+- !private ["Se", "init"]
+- !private ["Se", "map"]
+- !private ["Se", "post"]
+- !private ["Se", "subscript"]
+- !private ["s26DefaultStringInterpolationV", "appendInterpolation"]
+- !private ["s26DefaultStringInterpolationV", "appendLiteral"]
+- !private ["SD", "subscript"]
+- !private ["SE", "get"]
+- !private ["SE", "host"]
+- !private ["SE", "init"]
+- !private ["SE", "map"]
+- !private ["SE", "post"]
+- !private ["SE", "subscript"]
+- !private ["SQ", "Patron"]
+- !private ["SQ", "String"]
+- !private ["SQ", "URL"]
+- !private ["SQ", "URLQueryItem"]
+- !private ["SQ", "URLSession"]
+- !private ["SQ", "URLSessionConfiguration"]
+- !private ["SQ", "XCTAssertEqual"]
+- !private ["SQ", "XCTAssertNil"]
+- !private ["SQ", "XCTAssertNotNil"]
+- !private ["SQ", "XCTFail"]
+- ["SQ", ""]
+- !private ["SQ", "cancel"]
+- !private ["SQ", "default"]
+- !private ["SQ", "expectation"]
+- !private ["SQ", "freshService"]
+- !private ["SQ", "freshSession"]
+- !private ["SQ", "fulfill"]
+- !private ["SQ", "get"]
+- !private ["SQ", "host"]
+- !private ["SQ", "httpShouldUsePipelining"]
+- !private ["SQ", "init"]
+- !private ["SQ", "map"]
+- !private ["SQ", "post"]
+- !private ["SQ", "reloadIgnoringLocalCacheData"]
+- !private ["SQ", "requestCachePolicy"]
+- !private ["SQ", "setUp"]
+- !private ["SQ", "subscript"]
+- !private ["SQ", "svc"]
+- !private ["SQ", "tearDown"]
+- !private ["SQ", "testCancelled"]
+- !private ["SQ", "testDeinit"]
+- !private ["SQ", "testGet"]
+- !private ["SQ", "testGetArrayOfDictionaries"]
+- !private ["SQ", "testGetInvalidJSON"]
+- !private ["SQ", "testGetWithQuery"]
+- !private ["SQ", "testHost"]
+- !private ["SQ", "testNotFound"]
+- !private ["SQ", "testPost"]
+- !private ["SQ", "testPostInvalidJSON"]
+- !private ["SQ", "testWrongPort"]
+- !private ["SQ", "waitForExpectations"]
+- !private ["s5ErrorP", "_code"]
+- !private ["s5ErrorP", "code"]
+- ["s5ErrorP", "invalidJSON"]
+- !private ["s25ExpressibleByArrayLiteralP", ""]
+- !private ["s25ExpressibleByArrayLiteralP", "init"]
+- !private ["s25ExpressibleByArrayLiteralP", "map"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "Key"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "Value"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "init"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "subscript"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", ""]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s23ExpressibleByNilLiteralP", "get"]
+- !private ["s23ExpressibleByNilLiteralP", "host"]
+- !private ["s23ExpressibleByNilLiteralP", "post"]
+- !private ["s32ExpressibleByStringInterpolationP", "StringInterpolation"]
+- !private ["s32ExpressibleByStringInterpolationP", ""]
+- !private ["s32ExpressibleByStringInterpolationP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", ""]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", ""]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["SH", "Patron"]
+- !private ["SH", "String"]
+- !private ["SH", "URL"]
+- !private ["SH", "URLQueryItem"]
+- !private ["SH", "URLSession"]
+- !private ["SH", "URLSessionConfiguration"]
+- !private ["SH", "XCTAssertEqual"]
+- !private ["SH", "XCTAssertNil"]
+- !private ["SH", "XCTAssertNotNil"]
+- !private ["SH", "XCTFail"]
+- ["SH", ""]
+- !private ["SH", "cancel"]
+- !private ["SH", "default"]
+- !private ["SH", "expectation"]
+- !private ["SH", "freshService"]
+- !private ["SH", "freshSession"]
+- !private ["SH", "fulfill"]
+- !private ["SH", "get"]
+- !private ["SH", "host"]
+- !private ["SH", "httpShouldUsePipelining"]
+- !private ["SH", "init"]
+- !private ["SH", "map"]
+- !private ["SH", "post"]
+- !private ["SH", "reloadIgnoringLocalCacheData"]
+- !private ["SH", "requestCachePolicy"]
+- !private ["SH", "setUp"]
+- !private ["SH", "subscript"]
+- !private ["SH", "svc"]
+- !private ["SH", "tearDown"]
+- !private ["SH", "testCancelled"]
+- !private ["SH", "testDeinit"]
+- !private ["SH", "testGet"]
+- !private ["SH", "testGetArrayOfDictionaries"]
+- !private ["SH", "testGetInvalidJSON"]
+- !private ["SH", "testGetWithQuery"]
+- !private ["SH", "testHost"]
+- !private ["SH", "testNotFound"]
+- !private ["SH", "testPost"]
+- !private ["SH", "testPostInvalidJSON"]
+- !private ["SH", "testWrongPort"]
+- !private ["SH", "waitForExpectations"]
+- !private ["6Patron11JSONServiceP", "get"]
+- !private ["6Patron11JSONServiceP", "host"]
+- !private ["6Patron11JSONServiceP", "init"]
+- !private ["6Patron11JSONServiceP", "post"]
+- !private ["6Patron11JSONServiceP", "status"]
+- !private ["s25LosslessStringConvertibleP", ""]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["SM", ""]
+- !private ["SM", "map"]
+- !private ["10Foundation19MutableDataProtocolP", "map"]
+- !private ["So8NSCodingP", ""]
+- !private ["So9NSCopyingP", "cancel"]
+- !private ["So9NSCopyingP", "default"]
+- !private ["So9NSCopyingP", "httpShouldUsePipelining"]
+- !private ["So9NSCopyingP", "requestCachePolicy"]
+- !private ["So8NSObjectC", "AnyObject"]
+- ["So8NSObjectC", "Int"]
+- ["So8NSObjectC", "JSONService"]
+- ["So8NSObjectC", "Patron"]
+- !private ["So8NSObjectC", "PatronError"]
+- !private ["So8NSObjectC", "String"]
+- !private ["So8NSObjectC", "URL"]
+- !private ["So8NSObjectC", "URLQueryItem"]
+- ["So8NSObjectC", "URLSession"]
+- !private ["So8NSObjectC", "URLSessionConfiguration"]
+- !private ["So8NSObjectC", "XCTAssertEqual"]
+- !private ["So8NSObjectC", "XCTAssertNil"]
+- !private ["So8NSObjectC", "XCTAssertNotNil"]
+- !private ["So8NSObjectC", "XCTFail"]
+- ["So8NSObjectC", ""]
+- !private ["So8NSObjectC", "cancel"]
+- !private ["So8NSObjectC", "default"]
+- !private ["So8NSObjectC", "expectation"]
+- !private ["So8NSObjectC", "expectationForNotification"]
+- !private ["So8NSObjectC", "expectationForPredicate"]
+- !private ["So8NSObjectC", "expectationWithDescription"]
+- ["So8NSObjectC", "freshService"]
+- ["So8NSObjectC", "freshSession"]
+- !private ["So8NSObjectC", "fulfill"]
+- !private ["So8NSObjectC", "httpShouldUsePipelining"]
+- ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "requestCachePolicy"]
+- !private ["So8NSObjectC", "sessionWithConfiguration"]
+- ["So8NSObjectC", "setUp"]
+- ["So8NSObjectC", "svc"]
+- ["So8NSObjectC", "tearDown"]
+- ["So8NSObjectC", "testCancelled"]
+- ["So8NSObjectC", "testCaseWithInvocation"]
+- ["So8NSObjectC", "testCaseWithSelector"]
+- ["So8NSObjectC", "testDeinit"]
+- ["So8NSObjectC", "testGet"]
+- ["So8NSObjectC", "testGetArrayOfDictionaries"]
+- ["So8NSObjectC", "testGetInvalidJSON"]
+- ["So8NSObjectC", "testGetWithQuery"]
+- ["So8NSObjectC", "testHost"]
+- ["So8NSObjectC", "testNotFound"]
+- ["So8NSObjectC", "testPost"]
+- ["So8NSObjectC", "testPostInvalidJSON"]
+- ["So8NSObjectC", "testWrongPort"]
+- !private ["So8NSObjectC", "wait"]
+- !private ["So8NSObjectC", "waitForExpectations"]
+- !private ["So8NSObjectC", "waitForExpectationsWithTimeout"]
+- !private ["So8NSObjectP", "AnyObject"]
+- ["So8NSObjectP", "Int"]
+- ["So8NSObjectP", "JSONService"]
+- ["So8NSObjectP", "Patron"]
+- !private ["So8NSObjectP", "PatronError"]
+- !private ["So8NSObjectP", "String"]
+- !private ["So8NSObjectP", "URL"]
+- !private ["So8NSObjectP", "URLQueryItem"]
+- ["So8NSObjectP", "URLSession"]
+- !private ["So8NSObjectP", "URLSessionConfiguration"]
+- !private ["So8NSObjectP", "XCTAssertEqual"]
+- !private ["So8NSObjectP", "XCTAssertNil"]
+- !private ["So8NSObjectP", "XCTAssertNotNil"]
+- !private ["So8NSObjectP", "XCTFail"]
+- ["So8NSObjectP", ""]
+- !private ["So8NSObjectP", "cancel"]
+- !private ["So8NSObjectP", "default"]
+- !private ["So8NSObjectP", "expectation"]
+- !private ["So8NSObjectP", "expectationForNotification"]
+- !private ["So8NSObjectP", "expectationForPredicate"]
+- !private ["So8NSObjectP", "expectationWithDescription"]
+- ["So8NSObjectP", "freshService"]
+- ["So8NSObjectP", "freshSession"]
+- !private ["So8NSObjectP", "fulfill"]
+- !private ["So8NSObjectP", "httpShouldUsePipelining"]
+- ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "requestCachePolicy"]
+- !private ["So8NSObjectP", "sessionWithConfiguration"]
+- ["So8NSObjectP", "setUp"]
+- ["So8NSObjectP", "svc"]
+- ["So8NSObjectP", "tearDown"]
+- ["So8NSObjectP", "testCancelled"]
+- ["So8NSObjectP", "testCaseWithInvocation"]
+- ["So8NSObjectP", "testCaseWithSelector"]
+- ["So8NSObjectP", "testDeinit"]
+- ["So8NSObjectP", "testGet"]
+- ["So8NSObjectP", "testGetArrayOfDictionaries"]
+- ["So8NSObjectP", "testGetInvalidJSON"]
+- ["So8NSObjectP", "testGetWithQuery"]
+- ["So8NSObjectP", "testHost"]
+- ["So8NSObjectP", "testNotFound"]
+- ["So8NSObjectP", "testPost"]
+- ["So8NSObjectP", "testPostInvalidJSON"]
+- ["So8NSObjectP", "testWrongPort"]
+- !private ["So8NSObjectP", "wait"]
+- !private ["So8NSObjectP", "waitForExpectations"]
+- !private ["So8NSObjectP", "waitForExpectationsWithTimeout"]
+- !private ["Sq", "get"]
+- !private ["Sq", "host"]
+- !private ["Sq", "post"]
+- !private ["6PatronAAC", "init"]
+- ["6Patron0A5ErrorO", "invalidJSON"]
+- !private ["11PatronTestsAAC", "AnyObject"]
+- ["11PatronTestsAAC", "Int"]
+- ["11PatronTestsAAC", "JSONService"]
+- ["11PatronTestsAAC", "Patron"]
+- !private ["11PatronTestsAAC", "PatronError"]
+- !private ["11PatronTestsAAC", "String"]
+- !private ["11PatronTestsAAC", "URL"]
+- !private ["11PatronTestsAAC", "URLQueryItem"]
+- ["11PatronTestsAAC", "URLSession"]
+- !private ["11PatronTestsAAC", "URLSessionConfiguration"]
+- !private ["11PatronTestsAAC", "XCTAssertEqual"]
+- !private ["11PatronTestsAAC", "XCTAssertNil"]
+- !private ["11PatronTestsAAC", "XCTAssertNotNil"]
+- !private ["11PatronTestsAAC", "XCTFail"]
+- ["11PatronTestsAAC", ""]
+- ["11PatronTestsAAC", "deinit"]
+- !private ["11PatronTestsAAC", "expectation"]
+- !private ["11PatronTestsAAC", "freshService"]
+- !private ["11PatronTestsAAC", "freshSession"]
+- ["11PatronTestsAAC", "init"]
+- ["11PatronTestsAAC", "setUp"]
+- !private ["11PatronTestsAAC", "svc"]
+- ["11PatronTestsAAC", "tearDown"]
+- ["11PatronTestsAAC", "testCancelled"]
+- ["11PatronTestsAAC", "testDeinit"]
+- ["11PatronTestsAAC", "testGet"]
+- ["11PatronTestsAAC", "testGetArrayOfDictionaries"]
+- ["11PatronTestsAAC", "testGetInvalidJSON"]
+- ["11PatronTestsAAC", "testGetWithQuery"]
+- ["11PatronTestsAAC", "testHost"]
+- ["11PatronTestsAAC", "testNotFound"]
+- ["11PatronTestsAAC", "testPost"]
+- ["11PatronTestsAAC", "testPostInvalidJSON"]
+- ["11PatronTestsAAC", "testWrongPort"]
+- !private ["11PatronTestsAAC", "waitForExpectations"]
+- !private ["So19NSProgressReportingP", "cancel"]
+- !private ["Sk", ""]
+- !private ["Sk", "map"]
+- !private ["Sm", ""]
+- !private ["Sm", "init"]
+- !private ["Sm", "map"]
+- !private ["SY", "reloadIgnoringLocalCacheData"]
+- !private ["10Foundation20ReferenceConvertibleP", "init"]
+- !private ["ST", ""]
+- !private ["ST", "init"]
+- !private ["ST", "map"]
+- !private ["ST", "subscript"]
+- !private ["SS", "init"]
+- !private ["s27StringInterpolationProtocolP", "appendInterpolation"]
+- !private ["s27StringInterpolationProtocolP", "appendLiteral"]
+- !private ["s27StringInterpolationProtocolP", "init"]
+- !private ["Sy", "init"]
+- !private ["s16TextOutputStreamP", ""]
+- !private ["s16TextOutputStreamP", "appendInterpolation"]
+- !private ["s16TextOutputStreamP", "appendLiteral"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", ""]
+- !private ["s20TextOutputStreamableP", "init"]
+- !private ["10Foundation3URLV", "init"]
+- !private ["10Foundation12URLQueryItemV", "init"]
+- !private ["So12NSURLSessionC", "init"]
+- !private ["So25NSURLSessionConfigurationC", "default"]
+- !private ["So25NSURLSessionConfigurationC", "httpShouldUsePipelining"]
+- !private ["So25NSURLSessionConfigurationC", "requestCachePolicy"]
+- !private ["So16NSURLSessionTaskC", "cancel"]
+- !private ["So11XCTActivityP", "AnyObject"]
+- ["So11XCTActivityP", "Int"]
+- ["So11XCTActivityP", "JSONService"]
+- ["So11XCTActivityP", "Patron"]
+- !private ["So11XCTActivityP", "PatronError"]
+- !private ["So11XCTActivityP", "String"]
+- !private ["So11XCTActivityP", "URL"]
+- !private ["So11XCTActivityP", "URLQueryItem"]
+- ["So11XCTActivityP", "URLSession"]
+- !private ["So11XCTActivityP", "URLSessionConfiguration"]
+- !private ["So11XCTActivityP", "XCTAssertEqual"]
+- !private ["So11XCTActivityP", "XCTAssertNil"]
+- !private ["So11XCTActivityP", "XCTAssertNotNil"]
+- !private ["So11XCTActivityP", "XCTFail"]
+- ["So11XCTActivityP", ""]
+- !private ["So11XCTActivityP", "expectation"]
+- ["So11XCTActivityP", "freshService"]
+- ["So11XCTActivityP", "freshSession"]
+- ["So11XCTActivityP", "init"]
+- ["So11XCTActivityP", "setUp"]
+- ["So11XCTActivityP", "svc"]
+- ["So11XCTActivityP", "tearDown"]
+- ["So11XCTActivityP", "testCancelled"]
+- ["So11XCTActivityP", "testDeinit"]
+- ["So11XCTActivityP", "testGet"]
+- ["So11XCTActivityP", "testGetArrayOfDictionaries"]
+- ["So11XCTActivityP", "testGetInvalidJSON"]
+- ["So11XCTActivityP", "testGetWithQuery"]
+- ["So11XCTActivityP", "testHost"]
+- ["So11XCTActivityP", "testNotFound"]
+- ["So11XCTActivityP", "testPost"]
+- ["So11XCTActivityP", "testPostInvalidJSON"]
+- ["So11XCTActivityP", "testWrongPort"]
+- !private ["So11XCTActivityP", "waitForExpectations"]
+- !private ["So17XCTWaiterDelegateP", "AnyObject"]
+- ["So17XCTWaiterDelegateP", "Int"]
+- ["So17XCTWaiterDelegateP", "JSONService"]
+- ["So17XCTWaiterDelegateP", "Patron"]
+- !private ["So17XCTWaiterDelegateP", "PatronError"]
+- !private ["So17XCTWaiterDelegateP", "String"]
+- !private ["So17XCTWaiterDelegateP", "URL"]
+- !private ["So17XCTWaiterDelegateP", "URLQueryItem"]
+- ["So17XCTWaiterDelegateP", "URLSession"]
+- !private ["So17XCTWaiterDelegateP", "URLSessionConfiguration"]
+- !private ["So17XCTWaiterDelegateP", "XCTAssertEqual"]
+- !private ["So17XCTWaiterDelegateP", "XCTAssertNil"]
+- !private ["So17XCTWaiterDelegateP", "XCTAssertNotNil"]
+- !private ["So17XCTWaiterDelegateP", "XCTFail"]
+- ["So17XCTWaiterDelegateP", ""]
+- !private ["So17XCTWaiterDelegateP", "expectation"]
+- ["So17XCTWaiterDelegateP", "freshService"]
+- ["So17XCTWaiterDelegateP", "freshSession"]
+- ["So17XCTWaiterDelegateP", "init"]
+- ["So17XCTWaiterDelegateP", "setUp"]
+- ["So17XCTWaiterDelegateP", "svc"]
+- ["So17XCTWaiterDelegateP", "tearDown"]
+- ["So17XCTWaiterDelegateP", "testCancelled"]
+- ["So17XCTWaiterDelegateP", "testDeinit"]
+- ["So17XCTWaiterDelegateP", "testGet"]
+- ["So17XCTWaiterDelegateP", "testGetArrayOfDictionaries"]
+- ["So17XCTWaiterDelegateP", "testGetInvalidJSON"]
+- ["So17XCTWaiterDelegateP", "testGetWithQuery"]
+- ["So17XCTWaiterDelegateP", "testHost"]
+- ["So17XCTWaiterDelegateP", "testNotFound"]
+- ["So17XCTWaiterDelegateP", "testPost"]
+- ["So17XCTWaiterDelegateP", "testPostInvalidJSON"]
+- ["So17XCTWaiterDelegateP", "testWrongPort"]
+- !private ["So17XCTWaiterDelegateP", "waitForExpectations"]
+- !private ["So6XCTestC", "AnyObject"]
+- ["So6XCTestC", "Int"]
+- ["So6XCTestC", "JSONService"]
+- ["So6XCTestC", "Patron"]
+- !private ["So6XCTestC", "PatronError"]
+- !private ["So6XCTestC", "String"]
+- !private ["So6XCTestC", "URL"]
+- !private ["So6XCTestC", "URLQueryItem"]
+- ["So6XCTestC", "URLSession"]
+- !private ["So6XCTestC", "URLSessionConfiguration"]
+- !private ["So6XCTestC", "XCTAssertEqual"]
+- !private ["So6XCTestC", "XCTAssertNil"]
+- !private ["So6XCTestC", "XCTAssertNotNil"]
+- !private ["So6XCTestC", "XCTFail"]
+- ["So6XCTestC", ""]
+- !private ["So6XCTestC", "expectation"]
+- !private ["So6XCTestC", "expectationForNotification"]
+- !private ["So6XCTestC", "expectationForPredicate"]
+- !private ["So6XCTestC", "expectationWithDescription"]
+- ["So6XCTestC", "freshService"]
+- ["So6XCTestC", "freshSession"]
+- ["So6XCTestC", "init"]
+- ["So6XCTestC", "setUp"]
+- ["So6XCTestC", "svc"]
+- ["So6XCTestC", "tearDown"]
+- ["So6XCTestC", "testCancelled"]
+- ["So6XCTestC", "testCaseWithInvocation"]
+- ["So6XCTestC", "testCaseWithSelector"]
+- ["So6XCTestC", "testDeinit"]
+- ["So6XCTestC", "testGet"]
+- ["So6XCTestC", "testGetArrayOfDictionaries"]
+- ["So6XCTestC", "testGetInvalidJSON"]
+- ["So6XCTestC", "testGetWithQuery"]
+- ["So6XCTestC", "testHost"]
+- ["So6XCTestC", "testNotFound"]
+- ["So6XCTestC", "testPost"]
+- ["So6XCTestC", "testPostInvalidJSON"]
+- ["So6XCTestC", "testWrongPort"]
+- !private ["So6XCTestC", "wait"]
+- !private ["So6XCTestC", "waitForExpectations"]
+- !private ["So6XCTestC", "waitForExpectationsWithTimeout"]
+- !private ["So10XCTestCaseC", "AnyObject"]
+- ["So10XCTestCaseC", "Int"]
+- ["So10XCTestCaseC", "JSONService"]
+- ["So10XCTestCaseC", "Patron"]
+- !private ["So10XCTestCaseC", "PatronError"]
+- !private ["So10XCTestCaseC", "String"]
+- !private ["So10XCTestCaseC", "URL"]
+- !private ["So10XCTestCaseC", "URLQueryItem"]
+- ["So10XCTestCaseC", "URLSession"]
+- !private ["So10XCTestCaseC", "URLSessionConfiguration"]
+- !private ["So10XCTestCaseC", "XCTAssertEqual"]
+- !private ["So10XCTestCaseC", "XCTAssertNil"]
+- !private ["So10XCTestCaseC", "XCTAssertNotNil"]
+- !private ["So10XCTestCaseC", "XCTFail"]
+- ["So10XCTestCaseC", ""]
+- !private ["So10XCTestCaseC", "expectation"]
+- ["So10XCTestCaseC", "freshService"]
+- ["So10XCTestCaseC", "freshSession"]
+- ["So10XCTestCaseC", "init"]
+- ["So10XCTestCaseC", "setUp"]
+- ["So10XCTestCaseC", "svc"]
+- ["So10XCTestCaseC", "tearDown"]
+- ["So10XCTestCaseC", "testCancelled"]
+- ["So10XCTestCaseC", "testDeinit"]
+- ["So10XCTestCaseC", "testGet"]
+- ["So10XCTestCaseC", "testGetArrayOfDictionaries"]
+- ["So10XCTestCaseC", "testGetInvalidJSON"]
+- ["So10XCTestCaseC", "testGetWithQuery"]
+- ["So10XCTestCaseC", "testHost"]
+- ["So10XCTestCaseC", "testNotFound"]
+- ["So10XCTestCaseC", "testPost"]
+- ["So10XCTestCaseC", "testPostInvalidJSON"]
+- ["So10XCTestCaseC", "testWrongPort"]
+- !private ["So10XCTestCaseC", "waitForExpectations"]
+- !private ["So17XCTestExpectationC", "fulfill"]
+- !private ["s14_ArrayProtocolP", "map"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "init"]
+- !private ["s24_DestructorSafeContainerP", "map"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "init"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", ""]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", ""]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s34_ExpressibleByFileReferenceLiteralP", "init"]
+- !private ["s19_HasContiguousBytesP", "init"]
+- !private ["s19_HasContiguousBytesP", "map"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "map"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "subscript"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Patron"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "String"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "URL"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "URLQueryItem"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "URLSession"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "URLSessionConfiguration"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "XCTAssertEqual"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "XCTAssertNil"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "XCTAssertNotNil"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "XCTFail"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "cancel"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "default"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "expectation"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "freshService"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "freshSession"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "fulfill"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "httpShouldUsePipelining"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "requestCachePolicy"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "setUp"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "svc"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "tearDown"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "testCancelled"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "testDeinit"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "testGet"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "testGetArrayOfDictionaries"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "testGetInvalidJSON"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "testGetWithQuery"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "testHost"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "testNotFound"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "testPost"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "testPostInvalidJSON"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "testWrongPort"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "waitForExpectations"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "Patron"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "String"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "URL"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "URLQueryItem"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "URLSession"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "URLSessionConfiguration"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "XCTAssertEqual"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "XCTAssertNil"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "XCTAssertNotNil"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "XCTFail"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", ""]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "cancel"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "default"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "expectation"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "freshService"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "freshSession"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "fulfill"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "httpShouldUsePipelining"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "init"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "requestCachePolicy"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "setUp"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "svc"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "tearDown"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "testCancelled"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "testDeinit"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "testGet"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "testGetArrayOfDictionaries"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "testGetInvalidJSON"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "testGetWithQuery"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "testHost"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "testNotFound"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "testPost"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "testPostInvalidJSON"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "testWrongPort"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "waitForExpectations"]
+- !private ["s21_ObjectiveCBridgeableP", ""]
+- !private ["s21_ObjectiveCBridgeableP", "_ObjectiveCType"]
+- !private ["s21_ObjectiveCBridgeableP", "_bridgeToObjectiveC"]
+- !private ["s21_ObjectiveCBridgeableP", "_conditionallyBridgeFromObjectiveC"]
+- !private ["s21_ObjectiveCBridgeableP", "_forceBridgeFromObjectiveC"]
+- !private ["s21_ObjectiveCBridgeableP", "_unconditionallyBridgeFromObjectiveC"]
+- !private ["s21_ObjectiveCBridgeableP", "get"]
+- !private ["s21_ObjectiveCBridgeableP", "host"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "map"]
+- !private ["s21_ObjectiveCBridgeableP", "post"]
+- !private ["s21_ObjectiveCBridgeableP", "subscript"]
+depends-nominal:
+- !private "Sa"
+- !private "SK"
+- !private "8CloudKit21CKRecordValueProtocolP"
+- "s7CVarArgP"
+- !private "So23NSURLRequestCachePolicyV"
+- !private "Sl"
+- !private "SL"
+- !private "10Foundation15ContiguousBytesP"
+- "s28CustomDebugStringConvertibleP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "10Foundation12DataProtocolP"
+- !private "Se"
+- !private "s26DefaultStringInterpolationV"
+- !private "SD"
+- !private "SE"
+- "SQ"
+- "s5ErrorP"
+- !private "s25ExpressibleByArrayLiteralP"
+- !private "s30ExpressibleByDictionaryLiteralP"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s23ExpressibleByNilLiteralP"
+- !private "s32ExpressibleByStringInterpolationP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- "SH"
+- !private "6Patron11JSONServiceP"
+- !private "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
+- !private "SM"
+- !private "10Foundation19MutableDataProtocolP"
+- !private "So8NSCodingP"
+- !private "So9NSCopyingP"
+- "So8NSObjectC"
+- "So8NSObjectP"
+- !private "Sq"
+- !private "6PatronAAC"
+- "6Patron0A5ErrorO"
+- "11PatronTestsAAC"
+- !private "So19NSProgressReportingP"
+- !private "Sk"
+- !private "Sm"
+- !private "SY"
+- !private "10Foundation20ReferenceConvertibleP"
+- !private "ST"
+- !private "SS"
+- !private "s27StringInterpolationProtocolP"
+- !private "Sy"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- !private "10Foundation3URLV"
+- !private "10Foundation12URLQueryItemV"
+- !private "So12NSURLSessionC"
+- !private "So25NSURLSessionConfigurationC"
+- !private "So16NSURLSessionTaskC"
+- "So11XCTActivityP"
+- "So17XCTWaiterDelegateP"
+- "So6XCTestC"
+- "So10XCTestCaseC"
+- !private "So17XCTestExpectationC"
+- !private "s14_ArrayProtocolP"
+- !private "s30_CustomPlaygroundQuickLookableP"
+- !private "s24_DestructorSafeContainerP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s35_ExpressibleByBuiltinIntegerLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s34_ExpressibleByFileReferenceLiteralP"
+- !private "s19_HasContiguousBytesP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- "10Foundation37_KeyValueCodingAndObservingPublishingP"
+- !private "s21_ObjectiveCBridgeableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Users/michael/swift/patron/.build/x86_64-apple-macosx/debug/Patron.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/XPC.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/ObjectiveC.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreData.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreImage.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Combine.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/QuartzCore.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Dispatch.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Metal.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Darwin.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreLocation.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Foundation.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreFoundation.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreGraphics.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/os.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Swift.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/IOKit.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CloudKit.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/AppKit.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/SwiftOnoneSupport.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/XCTest.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/mach-o/dyld.modulemap"
+- "/Users/michael/swift/patron/.build/x86_64-apple-macosx/debug/Patron.build/module.modulemap"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Modules/module.modulemap"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/mach-o/compact_unwind_encoding.modulemap"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/xpc/XPC.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/ApplicationServices.framework/Headers/ApplicationServices.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/os.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CloudKit.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTest.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "453c43ef824c834879e02ce2817704e3"
