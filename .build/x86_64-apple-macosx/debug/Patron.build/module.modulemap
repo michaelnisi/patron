@@ -1,4 +1,0 @@
-module Patron {
-    header "/Users/michael/swift/patron/.build/x86_64-apple-macosx/debug/Patron.build/Patron-Swift.h"
-    requires objc
-}

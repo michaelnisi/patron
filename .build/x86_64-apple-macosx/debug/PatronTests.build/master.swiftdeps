@@ -1,6 +1,0 @@
-version: "Apple Swift version 5.3.1 (swiftlang-1200.0.35 clang-1200.0.32.4)"
-options: "b55d1a42d072766a413d98a6bde7fba2"
-build_time: [1605460603, 712696000]
-inputs:
-  "/Users/michael/swift/patron/Tests/PatronTests/PatronTests.swift": [1605460100, 224654856]
-  "/Users/michael/swift/patron/Tests/PatronTests/XCTestManifests.swift": [1605459867, 206694926]

@@ -1,5 +1,0 @@
-version: "Apple Swift version 5.3.1 (swiftlang-1200.0.35 clang-1200.0.32.4)"
-options: "1269f1b50fdc955f81d3fb9d5a546932"
-build_time: [1605460599, 747547000]
-inputs:
-  "/Users/michael/swift/patron/Sources/Patron/Patron.swift": [1605460053, 878940852]
