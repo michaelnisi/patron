@@ -1,7 +1,7 @@
 all: clean
 
 clean:
-	-rm -rf build
+	-rm -rf .build
 
 Tests/Server/node_modules:
 	cd Tests/Server && npm install
