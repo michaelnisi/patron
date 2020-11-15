@@ -3,6 +3,7 @@
 !default.pbxuser
 !default.perspectivev3
 **/node_modules
+*.build
 *.hmap
 *.ipa
 *.mode1v3

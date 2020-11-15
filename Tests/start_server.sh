@@ -2,4 +2,4 @@
 
 set -o xtrace
 
-node server/index.js > /dev/null & echo $! > .pid
+node ./Tests/Server/index.js > /dev/null & echo $! > .pid
