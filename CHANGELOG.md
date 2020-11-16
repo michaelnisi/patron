@@ -1,3 +1,7 @@
+## 7.0.0 (2020-11-16)
+
+Convert to Swift Package.
+
 ## 6.0.0 (2018-01-19)
 
 Turns out, making no assumptions about where callback blocks run is good practice.
