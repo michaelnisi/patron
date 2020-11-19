@@ -1,5 +1,5 @@
 //
-//  index.swift
+//  Patron.swift
 //  Patron
 //
 //  Created by Michael Nisi on 22/11/15.
