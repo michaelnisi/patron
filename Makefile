@@ -9,9 +9,7 @@ Tests/Server/node_modules:
 .pid:
 	./Tests/start_server.sh
 
-# test = swift test
-destination = 'platform=iOS Simulator,name=iPhone 12,OS=14.0'
-test = xcodebuild -scheme Patron -sdk iphonesimulator -destination $(destination) build test
+test = swift test
 
 test: Tests/Server/node_modules .pid
 	$(test) && ./Tests/stop_server.sh
