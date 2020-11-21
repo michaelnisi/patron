@@ -1,10 +1,11 @@
-[![Build Status](https://travis-ci.org/michaelnisi/patron.svg)](http://travis-ci.org/michaelnisi/patron)
 
 # Patron
 
-### Consume JSON HTTP APIs
+[![Build Status](https://travis-ci.org/michaelnisi/patron.svg)](http://travis-ci.org/michaelnisi/patron)
 
-Programs often communicate over [HTTP](http://httpwg.org/). The de facto standard notation for payloads in this communication is [JSON](http://www.json.org/). Patron provides a simple interface to send and receive data to and from HTTP servers. It’s purpose is to reduce redundant client code in our programs.
+> Consume JSON HTTP APIs
+
+Programs often communicate over [HTTP](http://httpwg.org/). The de facto standard notation for payloads in this communication is [JSON](http://www.json.org/). Patron provides a simple interface to send and receive data to and from HTTP servers. It’s purpose is to reduce redundant client code whilst keeping things simple.
 
 ## Symbols
 
