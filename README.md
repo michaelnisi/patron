@@ -1,9 +1,8 @@
-[![Build Status](https://travis-ci.org/michaelnisi/patron.svg)](http://travis-ci.org/michaelnisi/patron)
-[![Code Coverage](https://codecov.io/github/michaelnisi/patron/coverage.svg?branch=master)](https://codecov.io/github/michaelnisi/patron?branch=master)
+-[![Build Status](https://travis-ci.org/michaelnisi/patron.svg)](http://travis-ci.org/michaelnisi/patron)
 
 # Patron
 
-Consume JSON HTTP APIs.
+### Consume JSON HTTP APIs
 
 Programs often communicate over [HTTP](http://httpwg.org/). The de facto standard notation for payloads in this communication is [JSON](http://www.json.org/). Patron provides a simple interface to send and receive data to and from HTTP servers. It’s purpose is to reduce redundant client code in our programs.
 
@@ -172,7 +171,7 @@ The last `URLSession` or `JSONSerialization` error code, and the timestamp at wh
 
 ## Test
 
-For testing we run a little Node.js Server, find it in `Tests/Server`.
+For testing, we run a little Node.js Server – find it in `Tests/Server`.
 
 ```
 $ make test
@@ -180,7 +179,7 @@ $ make test
 
 ## Install
 
-Add `https://github.com/michaelnisi/patron`  to your package manifest.
+📦 Add `https://github.com/michaelnisi/patron`  to your package manifest.
 
 ## License
 
