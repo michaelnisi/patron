@@ -1,6 +1,4 @@
-# Patron
-
-[![Build Status](https://travis-ci.org/michaelnisi/patron.svg)](http://travis-ci.org/michaelnisi/patron)
+# Patron [![Build Status](https://travis-ci.org/michaelnisi/patron.svg)](http://travis-ci.org/michaelnisi/patron)
 
 > Consume JSON HTTP APIs
 
