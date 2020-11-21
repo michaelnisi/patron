@@ -1,4 +1,6 @@
 sudo: false
+
+language: swift
 os: osx
 osx_image: xcode12.2
 
