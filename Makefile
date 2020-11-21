@@ -1,13 +1,19 @@
 all: clean
 
 clean:
-	-rm -rf .build
+	-rm -rf .build .pid
 
 Tests/Server/node_modules:
 	cd Tests/Server && npm install
 
-test: Tests/Server/node_modules
-	./Tests/start_server.sh && swift test
-	./Tests/stop_server.sh
+.pid:
+	./Tests/start_server.sh
+
+# test = swift test
+destination = 'platform=iOS Simulator,name=iPhone 12,OS=14.0'
+test = xcodebuild -scheme Patron -sdk iphonesimulator -destination $(destination) build test
+
+test: Tests/Server/node_modules .pid
+	$(test) && ./Tests/stop_server.sh
 
 .PHONY: all clean test

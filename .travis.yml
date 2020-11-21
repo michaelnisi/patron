@@ -1,8 +1,0 @@
-sudo: false
-osx_image: xcode12.2
-script: "travis_retry make test"
-branches:
-  only:
-    - master
-  except:
-    - /^v[0-9]/
