@@ -5,8 +5,7 @@ os: osx
 osx_image: xcode12.2
 
 script: "make test"
+
 branches:
-  only:
-    - master
   except:
     - /^v[0-9]/
